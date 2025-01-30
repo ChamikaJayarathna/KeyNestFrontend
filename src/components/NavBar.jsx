@@ -60,7 +60,7 @@ const NavBar = () => {
             <button className="hidden md:block hover:text-white/80 transition-colors">
               Sign in
             </button>
-            <button className="px-4 py-2 bg-white text-custom-navy-blue rounded-md hover:bg-white/90 transition-colors">
+            <button className="px-6 py-2 bg-white text-custom-navy-blue rounded-md hover:bg-white/90 transition-colors">
               Join
             </button>
           </div>
