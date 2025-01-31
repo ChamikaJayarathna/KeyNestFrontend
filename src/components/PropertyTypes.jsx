@@ -33,7 +33,7 @@ const PropertyTypes = () => {
 
             <PropertyCard 
                 icon={<RiCameraLensLine />}
-                title="Office & Studio"
+                title="Studio"
                 subtitle="80 Property"
             />
 
