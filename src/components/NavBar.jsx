@@ -41,14 +41,16 @@ const NavBar = () => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Link to='/sign-in'>
+            <Link to="/sign-in">
               <button className="hidden md:block text-lg hover:text-white/80">
                 Sign in
               </button>
             </Link>
-            <button className="px-6 py-2 bg-white text-black font-medium rounded-md hover:bg-white/90">
-              Join
-            </button>
+            <Link to="/sign-up">
+              <button className="px-6 py-2 bg-white text-black font-medium rounded-md hover:bg-white/90">
+                Join
+              </button>
+            </Link>
           </div>
 
           <div className="lg:hidden">

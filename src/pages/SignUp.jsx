@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaApple, FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook, FaApple } from "react-icons/fa";
 
-const SignIn = () => {
+const SignUp = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-custom-teal-blue">
       <div className="absolute top-8 text-center text-white">
@@ -14,8 +14,13 @@ const SignIn = () => {
       </div>
 
       <div className="w-full max-w-md rounded-2xl bg-custom-grayish-white p-8 shadow-lg">
-        <h2 className="mb-10 text-center text-2xl font-semibold">Login</h2>
+        <h2 className="mb-10 text-center text-2xl font-semibold">Register</h2>
         <form className="flex flex-col items-center">
+          <input
+            type="text"
+            placeholder="Name"
+            className="mb-3 w-full rounded-md border border-custom-teal-blue p-3 outline-none"
+          />
           <input
             type="email"
             placeholder="Email"
@@ -26,24 +31,19 @@ const SignIn = () => {
             placeholder="Password"
             className="mb-2 w-full rounded-md border border-custom-teal-blue p-3 outline-none"
           />
-          <div className="mb-6 mt-2 text-right text-sm text-gray-500 w-full">
-            <Link to="/forgot-password" className="hover:underline">
-              Forgot password?
-            </Link>
-          </div>
 
           <button
             type="submit"
-            className="w-30 rounded-lg bg-black p-3 text-white font-semibold cursor-pointer"
+            className="w-30 rounded-lg bg-black p-3 text-white font-semibold mt-3 cursor-pointer"
           >
-            Login
+            Join
           </button>
         </form>
 
         <div className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account?{" "}
-          <Link to="/sign-up" className="font-medium text-black hover:underline">
-            Create account
+          Already have an account?{" "}
+          <Link to="/sign-in" className="font-medium text-black hover:underline">
+            Sign in
           </Link>
         </div>
 
@@ -71,4 +71,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
