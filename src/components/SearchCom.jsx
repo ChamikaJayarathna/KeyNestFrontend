@@ -8,7 +8,7 @@ const SearchCom = () => {
   const tabs = ["Buy", "Rent", "Sold"];
 
   return (
-    <div className="w-full max-w-3xl bg-black/50 p-4 rounded-xl backdrop-blur-sm">
+    <div className="w-full max-w-3xl bg-custom-navy-blue/60 p-4 rounded-xl backdrop-blur-sm">
 
       <div className="flex gap-6 pb-3">
         {tabs.map((tab) => (
