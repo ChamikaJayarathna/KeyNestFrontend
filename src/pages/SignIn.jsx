@@ -7,8 +7,10 @@ const SignIn = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-custom-teal-blue">
       <div className="absolute top-8 text-center text-white">
-        <h1 className="text-3xl font-bold">KeyNest</h1>
-        <p className="text-sm opacity-80">The Property Management Company</p>
+        <Link to="/">
+          <h1 className="text-3xl font-bold">KeyNest</h1>
+          <p className="text-sm opacity-80">The Property Management Company</p>
+        </Link>
       </div>
 
       <div className="w-full max-w-md rounded-2xl bg-custom-grayish-white p-8 shadow-lg">
