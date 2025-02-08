@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { IoMenu, IoClose } from "react-icons/io5";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const isHome = location.pathname === "/";
 
   const navLinks = [
     { to: "/", text: "Home" },
@@ -13,7 +16,11 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent text-white">
+    <nav
+      className={`absolute top-0 left-0 right-0 z-50 bg-transparent ${
+        isHome ? "text-white" : "text-custom-teal-blue"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex flex-col">
