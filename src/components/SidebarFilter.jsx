@@ -60,7 +60,7 @@ const SidebarFilter = () => {
   ];
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6 border-r-3 h-screen overflow-y-auto sticky top-0">
       <div>
         <h2 className="text-custom-teal-blue text-base font-bold mb-3">
           Property Type

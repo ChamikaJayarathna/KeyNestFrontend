@@ -6,8 +6,8 @@ const PropertyPage = () => {
   return (
     <>
       <NavBar />
-      <div className="flex h-[calc(100vh-60px)] pt-[60px]">
-        <div className="w-1/4 h-full p-4 border-r-4 overflow-auto">
+      <div className="flex h-[calc(100vh-60px)] pt-[80px]">
+        <div className="w-1/4 h-full p-4 overflow-auto mt-5">
           <SidebarFilter />
         </div>
 
