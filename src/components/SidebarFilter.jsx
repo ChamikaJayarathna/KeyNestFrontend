@@ -65,7 +65,7 @@ const SidebarFilter = () => {
         <h2 className="text-custom-teal-blue text-base font-bold mb-3">
           Property Type
         </h2>
-        <div className="space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {propertyTypes.map((type) => (
             <label key={type} className="flex items-center space-x-2">
               <input
@@ -183,7 +183,7 @@ const SidebarFilter = () => {
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
           Outdoor features
         </h2>
-        <div className="space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {outdoorFeatures.map((feature) => (
             <label key={feature} className="flex items-center gap-2">
               <input type="checkbox" className="w-4 h-4 accent-black" />
@@ -197,7 +197,7 @@ const SidebarFilter = () => {
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
           Indoor features
         </h2>
-        <div className="space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {indoorFeatures.map((feature) => (
             <label key={feature} className="flex items-center gap-2">
               <input type="checkbox" className="w-4 h-4 accent-black" />
@@ -211,7 +211,7 @@ const SidebarFilter = () => {
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
           Climate control & energy
         </h2>
-        <div className="space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {climateFeatures.map((feature) => (
             <label key={feature} className="flex items-center gap-2">
               <input type="checkbox" className="w-4 h-4 accent-black" />
@@ -225,7 +225,7 @@ const SidebarFilter = () => {
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
           Accessibility features
         </h2>
-        <div className="space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {accessibilityFeatures.map((feature) => (
             <label key={feature} className="flex items-center gap-2">
               <input type="checkbox" className="w-4 h-4 accent-black" />
