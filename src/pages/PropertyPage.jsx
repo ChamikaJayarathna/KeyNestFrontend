@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import SidebarFilter from "../components/SidebarFilter";
+import PropertyList from "../components/PropertyList";
 
 const PropertyPage = () => {
   return (
@@ -12,7 +13,9 @@ const PropertyPage = () => {
         </div>
 
         <div className="flex-1 h-full overflow-auto p-4">
-          <div className="listContainer"></div>
+          <div className="">
+            <PropertyList />
+          </div>
         </div>
       </div>
     </>
