@@ -3,12 +3,12 @@ import { BiSolidCarGarage } from "react-icons/bi";
 import { FaMapMarkerAlt, FaCar } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
 
-const PropertyCard = () => {
+const PropertyCard = ({ property }) => {
   return (
     <div className="w-[305px] h-[380px] max-w-sm bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
       <div className="relative">
         <img
-          src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          src={property.img}
           alt="Apartment"
           className="w-full h-[190px] object-cover"
         />

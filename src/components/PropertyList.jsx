@@ -1,10 +1,11 @@
 import React from "react";
 import PropertyCard from "./PropertyCard";
+import { listData } from "../lib/dummydata";
 
 const PropertyList = () => {
   return (
     <div>
-      <div className="flex justify-end">
+      <div className="flex justify-end mr-25">
         <div
           className="flex items-center border border-custom-teal-blue rounded-lg overflow-hidden max-w-md"
           style={{ width: "426px", height: "50px" }}
@@ -23,8 +24,10 @@ const PropertyList = () => {
         </div>
       </div>
 
-      <div className="mt-5">
-        <PropertyCard />
+      <div className="mt-15 grid grid-cols-3 gap-3">
+        {listData.map((property) => (
+          <PropertyCard key={property.id} property={property} />
+        ))}
       </div>
 
     </div>
