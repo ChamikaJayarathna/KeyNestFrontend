@@ -24,7 +24,7 @@ const PropertyList = () => {
         </div>
       </div>
 
-      <div className="mt-15 grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-3 gap-2">
         {listData.map((property) => (
           <PropertyCard key={property.id} property={property} />
         ))}

@@ -5,7 +5,7 @@ import { IoMdAdd } from "react-icons/io";
 
 const PropertyCard = ({ property }) => {
   return (
-    <div className="w-[305px] h-[380px] max-w-sm bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+    <div className="w-[305px] h-[380px] max-w-sm bg-gray-50 rounded-2xl shadow-lg overflow-hidden mt-10">
       <div className="relative">
         <img
           src={property.img}
