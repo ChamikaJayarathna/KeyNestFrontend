@@ -24,9 +24,9 @@ const PropertyCard = () => {
         </button>
       </div>
 
-      <div className="flex justify-between items-start pb-2">
+      <div className="flex justify-between items-start pb-2 pl-4 pr-5">
         <div>
-          <h3 className="text-lg font-bold text-gray-900">The Property Name</h3>
+          <h3 className="text-base font-bold text-black">The Property Name</h3>
           <p className="flex items-center text-gray-500 text-sm mt-1">
             <FaMapMarkerAlt className="mr-1 text-gray-400" />
             001, Name Road, City
