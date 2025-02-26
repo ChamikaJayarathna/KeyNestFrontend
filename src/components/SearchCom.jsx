@@ -1,15 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import { LuImagePlus } from "react-icons/lu";
 import { PiSlidersHorizontal } from "react-icons/pi";
+import FileUpload from "./FileUpload";
 
 const SearchCom = () => {
   const [activeTab, setActiveTab] = useState("Buy");
+  const [isFileUploadVisible, setIsFileUploadVisible] = useState(false);
+  const fileUploadRef = useRef(null);
+
   const tabs = ["Buy", "Rent", "Sold"];
+
+  const handleImageClick = () => {
+    setIsFileUploadVisible((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        fileUploadRef.current &&
+        !fileUploadRef.current.contains(event.target)
+      ) {
+        setIsFileUploadVisible(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="w-full max-w-3xl bg-custom-navy-blue/60 p-4 rounded-xl backdrop-blur-sm">
-
       <div className="flex gap-6 pb-3">
         {tabs.map((tab) => (
           <button
@@ -28,7 +50,6 @@ const SearchCom = () => {
       </div>
 
       <div className="flex items-center gap-3 rounded-lg p-2">
-
         <div className="flex items-center w-full relative bg-black/30 rounded-lg px-3 py-3">
           <CiSearch className="text-gray-400 w-5 h-5 absolute left-3" />
           <input
@@ -36,13 +57,25 @@ const SearchCom = () => {
             placeholder="Search here..."
             className="w-full bg-transparent outline-none pl-10 pr-4 text-white placeholder-gray-400"
           />
-          <button className="absolute right-3 text-white">
+          <button
+            onClick={handleImageClick}
+            className="absolute right-3 text-white"
+          >
             <LuImagePlus className="w-5 h-5" />
           </button>
+
+          {isFileUploadVisible && (
+            <div
+              ref={fileUploadRef}
+              className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-lg z-10"
+            >
+              <FileUpload />
+            </div>
+          )}
         </div>
 
         <button className="flex items-center gap-2 bg-black/30 border border-white/50 rounded-lg px-4 py-3 text-white hover:bg-black/40 transition-colors">
-          <PiSlidersHorizontal className="w-5 h-5"/>
+          <PiSlidersHorizontal className="w-5 h-5" />
           <span>Filters</span>
         </button>
 
@@ -50,7 +83,6 @@ const SearchCom = () => {
           Search
         </button>
       </div>
-
     </div>
   );
 };

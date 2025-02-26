@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { IoCloudUploadOutline } from "react-icons/io5";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
@@ -47,38 +48,49 @@ const FileUpload = () => {
   };
 
   return (
-    <div className="bg-white shadow-md p-6 rounded-lg w-full max-w-md">
-      <h2 className="text-xl font-semibold mb-4">Upload an Image</h2>
-      <input
-        type="file"
-        onChange={handleFileChange}
-        className="mb-4 w-full text-sm"
-      />
-      {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-      <button
-        onClick={handleUpload}
-        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-        disabled={loading}
-      >
-        {loading ? "Processing..." : "Upload & Predict"}
-      </button>
-      {prediction && (
-        <div className="mt-6">
-          <h3 className="text-lg font-medium">Prediction: {prediction}</h3>
-          <h4 className="text-md mt-4 font-semibold">Matching Rentals:</h4>
-          {rentals.length > 0 ? (
-            <ul className="list-disc pl-5 mt-2">
-              {rentals.map((rental) => (
-                <li key={rental._id}>
-                  <strong>{rental.title}</strong>: {rental.features}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-gray-600 mt-2">No matching rentals found.</p>
-          )}
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+      <div className="bg-white shadow-md p-8 rounded-lg w-full max-w-md">
+        <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center mb-4">
+          <IoCloudUploadOutline className="mx-auto h-12 w-12 text-gray-400" />
+          <p className="text-gray-500">upload</p>
         </div>
-      )}
+        <p className="text-center text-gray-700 mb-4">
+          Select From Device Or Drag Here
+        </p>
+        <input
+          type="file"
+          onChange={handleFileChange}
+          className="hidden"
+          id="fileInput"
+        />
+        <label htmlFor="fileInput">
+          <button
+            onClick={handleUpload}
+            className="bg-black text-white py-2 px-6 rounded-md w-full hover:bg-gray-800 transition"
+            disabled={loading}
+          >
+            {loading ? "Processing..." : "Apply"}
+          </button>
+        </label>
+        {error && <p className="text-red-500 text-sm mt-4">{error}</p>}
+        {prediction && (
+          <div className="mt-6">
+            <h3 className="text-lg font-medium">Prediction: {prediction}</h3>
+            <h4 className="text-md mt-4 font-semibold">Matching Rentals:</h4>
+            {rentals.length > 0 ? (
+              <ul className="list-disc pl-5 mt-2">
+                {rentals.map((rental) => (
+                  <li key={rental._id}>
+                    <strong>{rental.title}</strong>: {rental.features}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-600 mt-2">No matching rentals found.</p>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
