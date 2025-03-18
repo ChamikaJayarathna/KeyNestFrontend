@@ -3,15 +3,16 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import apiRequest from "../lib/apiRequest";
 import { AuthContext } from "../context/AuthContext";
 import ProfileDropdown from "./ProfileDropdown";
+import { jwtDecode } from "jwt-decode";
 
 const NavBar = () => {
   const [profileDetail, setProfileDetail] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
+
   const location = useLocation();
-
   const { currentUser } = useContext(AuthContext);
-  const token = currentUser?.token;
 
+  const token = currentUser?.token;
   const isHome = location.pathname === "/";
 
   const navLinks = [
@@ -23,10 +24,13 @@ const NavBar = () => {
 
   const GetProfile = async () => {
     try {
-      const response = await apiRequest.get("/auth/profile", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setProfileDetail(response.data);
+
+      const decodedToken = jwtDecode(token);
+      const userId = decodedToken._id;
+
+      const response = await apiRequest.get(`/auth/profile/${userId}`);
+      const data = response.data;
+      setProfileDetail(data);
     } catch (error) {
       console.log(error);
     }
@@ -85,7 +89,7 @@ const NavBar = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowDropdown((prev) => !prev)}
-                  className="w-12 h-12 rounded-full overflow-hidden border-2 border-red-500"
+                  className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-400"
                 >
                   <img
                     src={"./default-profile-avatar.jpg"}
