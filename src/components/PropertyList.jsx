@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import PropertyCard from "./PropertyCard";
-import { listData } from "../lib/dummydata";
 import apiRequest from "../lib/apiRequest";
 
 const PropertyList = () => {
