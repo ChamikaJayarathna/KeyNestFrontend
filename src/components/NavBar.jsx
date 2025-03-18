@@ -96,7 +96,7 @@ const NavBar = () => {
                   />
                 </button>
 
-                {/* Profile Dropdown */}
+                {/* ProfileDropdown */}
                 {showDropdown && (
                   <div className="absolute right-0 mt-2 w-48 bg-white text-black shadow-lg rounded-lg overflow-hidden">
                     <Link
