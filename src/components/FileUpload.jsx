@@ -2,11 +2,14 @@ import axios from "axios";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { IoCloudUploadOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [prediction, setPrediction] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleUpload = async () => {
     if (!file) {
@@ -17,6 +20,12 @@ const FileUpload = () => {
     try {
       setLoading(true);
       const response = await axios.post(import.meta.env.VITE_AI_SERVER_DOMAIN +"/predict");
+
+      if (response.data.prediction) {
+        navigate("/predict-property", { state: { prediction: response.data.prediction } });
+      } else {
+        toast.error("Prediction failed. Please try again.");
+      }
     } catch (error) {
       console.log(error);
     }

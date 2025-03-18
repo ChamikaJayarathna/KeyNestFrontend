@@ -5,6 +5,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import PropertyPage from './pages/PropertyPage';
 import { AuthContextProvider } from './context/AuthContext';
+import PredictPropertyPage from './pages/PredictPropertyPage';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path='/sign-in' element={<SignIn/>} />
           <Route path='/sign-up' element={<SignUp/>} />
           <Route path='/property' element={<PropertyPage/>} />
+          <Route path='/predict-property' element={<PredictPropertyPage/>} />
         </Routes>
       </BrowserRouter>
     </AuthContextProvider>
