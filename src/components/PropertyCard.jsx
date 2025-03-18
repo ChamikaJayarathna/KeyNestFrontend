@@ -29,6 +29,8 @@ const PropertyCard = ({ property }) => {
         </div>
       </div>
 
+      <hr className="border-t border-gray-300 mx-auto w-[92%]"/>
+
       <div className="flex items-center justify-between px-3 py-3">
         <span className="text-base font-bold text-custom-teal-blue">
           <span className="font-bold">LKR {property?.price}</span>
