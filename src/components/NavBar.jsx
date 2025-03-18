@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { IoMenu, IoClose } from "react-icons/io5";
 import apiRequest from "../lib/apiRequest";
 import { AuthContext } from "../context/AuthContext";
+import ProfileDropdown from "./ProfileDropdown";
 
 const NavBar = () => {
-  const [open, setOpen] = useState(false);
   const [profileDetail, setProfileDetail] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
@@ -62,7 +61,6 @@ const NavBar = () => {
                     isActive ? "bg-white/10" : "hover:bg-white/10"
                   }`
                 }
-                onClick={() => setOpen(false)}
               >
                 {link.text}
               </NavLink>
@@ -86,110 +84,18 @@ const NavBar = () => {
             ) : (
               <div className="relative">
                 <button
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  className="w-10 h-10 rounded-full border-2 border-white/50 overflow-hidden"
+                  onClick={() => setShowDropdown((prev) => !prev)}
+                  className="w-12 h-12 rounded-full border-2 border-white/50 overflow-hidden"
                 >
                   <img
-                    src={profileDetail?.profileImage || "/default-avatar.png"}
-                    alt="Profile"
+                    src={"./default-profile-avatar.jpg"}
                     className="w-full h-full object-cover"
                   />
                 </button>
-
-                {/* ProfileDropdown */}
                 {showDropdown && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white text-black shadow-lg rounded-lg overflow-hidden">
-                    <Link
-                      to="/profile"
-                      className="block px-4 py-2 hover:bg-gray-100"
-                      onClick={() => setShowDropdown(false)}
-                    >
-                      Profile
-                    </Link>
-                    <button
-                      onClick={() => {
-                        logout();
-                        setShowDropdown(false);
-                      }}
-                      className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-                    >
-                      Logout
-                    </button>
-                  </div>
+                  <ProfileDropdown setShowDropdown={setShowDropdown} />
                 )}
               </div>
-            )}
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setOpen(!open)}
-              className="text-white p-2 rounded-md"
-              aria-label="Toggle menu"
-            >
-              {open ? (
-                <IoClose className="h-7 w-7" />
-              ) : (
-                <IoMenu className="h-7 w-7" />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        <div className={`lg:hidden transition-all ${open ? "block" : "hidden"}`}>
-          <div className="pt-4 pb-2 border-t border-white/10">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className="block px-4 py-3 text-lg hover:bg-white/10 transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                {link.text}
-              </NavLink>
-            ))}
-
-            {!currentUser ? (
-              <>
-                <Link to="/sign-in">
-                  <button
-                    className="block w-full text-left px-4 py-3 text-lg hover:bg-white/10"
-                    onClick={() => setOpen(false)}
-                  >
-                    Sign in
-                  </button>
-                </Link>
-                <Link to="/sign-up">
-                  <button
-                    className="block w-full text-left px-4 py-3 text-lg hover:bg-white/10"
-                    onClick={() => setOpen(false)}
-                  >
-                    Join
-                  </button>
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link to="/profile">
-                  <button
-                    className="block w-full text-left px-4 py-3 text-lg hover:bg-white/10"
-                    onClick={() => setOpen(false)}
-                  >
-                    Profile
-                  </button>
-                </Link>
-                <button
-                  className="block w-full text-left px-4 py-3 text-lg hover:bg-white/10"
-                  onClick={() => {
-                    logout();
-                    setOpen(false);
-                  }}
-                >
-                  Logout
-                </button>
-              </>
             )}
           </div>
         </div>
