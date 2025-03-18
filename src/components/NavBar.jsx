@@ -38,7 +38,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`absolute top-0 left-0 right-0 z-50 bg-transparent ${
+      className={`absolute top-0 left-0 right-0 z-50 bg-transparent mt-2 ${
         isHome ? "text-white" : "text-custom-teal-blue"
       }`}
     >
@@ -51,7 +51,7 @@ const NavBar = () => {
             </p>
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex flex-1 justify-center space-x-8">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -67,7 +67,7 @@ const NavBar = () => {
             ))}
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-6 relative">
             {!currentUser ? (
               <>
                 <Link to="/sign-in">
@@ -85,15 +85,18 @@ const NavBar = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowDropdown((prev) => !prev)}
-                  className="w-12 h-12 rounded-full border-2 border-white/50 overflow-hidden"
+                  className="w-12 h-12 rounded-full overflow-hidden border-2 border-red-500"
                 >
                   <img
                     src={"./default-profile-avatar.jpg"}
+                    alt="Profile"
                     className="w-full h-full object-cover"
                   />
                 </button>
                 {showDropdown && (
-                  <ProfileDropdown setShowDropdown={setShowDropdown} />
+                  <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md">
+                    <ProfileDropdown setShowDropdown={setShowDropdown} />
+                  </div>
                 )}
               </div>
             )}
