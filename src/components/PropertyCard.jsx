@@ -11,8 +11,20 @@ const PropertyCard = ({ property }) => {
       />
 
       <div className="flex gap-3 items-center p-3">
-        <span className="bg-green-100 text-green-600 text-sm font-semibold px-3 py-1 border flex items-center">
-          {property?.type}
+        <span
+          className={`text-sm font-semibold px-3 py-1 border flex items-center ${
+            property?.type === "rent"
+              ? "bg-yellow-100 text-yellow-500"
+              : property?.type === "buy"
+              ? "bg-green-100 text-green-600"
+              : "bg-gray-100 text-gray-600"
+          }`}
+        >
+          {property?.type === "rent"
+            ? "For Rent"
+            : property?.type === "buy"
+            ? "Buy"
+            : ""}
         </span>
         <span className="bg-green-100 text-green-600 text-sm font-semibold px-3 py-1 border ml-[-1px]">
           {property?.property}
@@ -29,7 +41,7 @@ const PropertyCard = ({ property }) => {
         </div>
       </div>
 
-      <hr className="border-t border-gray-300 mx-auto w-[92%]"/>
+      <hr className="border-t border-gray-300 mx-auto w-[92%]" />
 
       <div className="flex items-center justify-between px-3 py-3">
         <span className="text-base font-bold text-custom-teal-blue">
