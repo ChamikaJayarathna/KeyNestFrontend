@@ -14,7 +14,6 @@ const PropertyList = () => {
     try {
       const response = await apiRequest.get('/property/get-all-property');
       setPropertyDetails(response.data);
-      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
