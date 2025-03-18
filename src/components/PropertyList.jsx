@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropertyCard from "./PropertyCard";
 import { listData } from "../lib/dummydata";
+import apiRequest from "../lib/apiRequest";
 
 const PropertyList = () => {
+
+  const [propertyDetails, setPropertyDetails] = useState([]);
+
+  useEffect(() => {
+    GetAllProperty();
+  }, []);
+
+  const GetAllProperty = async () => {
+    try {
+      const response = await apiRequest.get('/property/get-all-property');
+      setPropertyDetails(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <div className="flex justify-end mr-25">
@@ -24,8 +42,8 @@ const PropertyList = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-2">
-        {listData.map((property) => (
+      <div className="grid grid-cols-4 gap-32">
+        {propertyDetails.map((property) => (
           <PropertyCard key={property.id} property={property} />
         ))}
       </div>
