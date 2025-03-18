@@ -26,8 +26,8 @@ const PropertyCard = ({ property }) => {
             ? "Buy"
             : ""}
         </span>
-        <span className="bg-green-100 text-green-600 text-sm font-semibold px-3 py-1 border ml-[-1px]">
-          {property?.property}
+        <span className="bg-gray-100 text-gray-600 text-sm font-semibold px-3 py-1 border ml-[-1px]">
+          {property?.property?.charAt(0).toUpperCase() + property?.property?.slice(1)}
         </span>
       </div>
 
