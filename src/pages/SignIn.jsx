@@ -2,16 +2,16 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaApple } from "react-icons/fa";
-import { AuthContext } from "../context/AuthContext";
 import toast, { Toaster } from "react-hot-toast";
 import apiRequest from "../lib/apiRequest";
+import AuthContext from "../context/AuthContext";
 
 
 const SignIn = () => {
-
-  const { updateUser } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const { setToken, setUserRole } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -22,7 +22,10 @@ const SignIn = () => {
         password
       })
 
-      updateUser(res.data);
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("role", res.data.role);
+      setToken(res.data.token);
+      setUserRole(res.data.role);
       navigate("/");
 
     } catch (error) {

@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import PropertyPage from "./pages/PropertyPage";
-import { AuthContextProvider } from "./context/AuthContext";
+import { AuthProvider } from "./context/AuthContext";
 import PredictPropertyPage from "./pages/PredictPropertyPage";
 import AdminLayout from "./admin/AdminLayout";
 import Dashboard from "./admin/admin-pages/Dashboard";
@@ -64,14 +64,14 @@ const App = () => {
           path: "update-property/:id",
           element: <UpdateProperty />,
         },
-      ]
+      ],
     },
   ]);
 
   return (
-    <AuthContextProvider>
+    <AuthProvider>
       <RouterProvider router={router} />
-    </AuthContextProvider>
+    </AuthProvider>
   );
 };
 

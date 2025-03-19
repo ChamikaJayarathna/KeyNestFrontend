@@ -1,29 +1,23 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
-export const AuthContext = createContext();
+const AuthContext = createContext();
 
-export const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || null
-  );
+export const AuthProvider = ({ children }) => {
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const [userRole, setUserRole] = useState(localStorage.getItem("role"));
 
-  const updateUser = (data) => {
-    setCurrentUser(data);
+  const removeFromSession = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    setToken(null);
+    setUserRole(null);
   };
 
-  useEffect(() => {
-    if(currentUser){
-        // Save user data in localStorage
-        localStorage.setItem("user", JSON.stringify(currentUser));
-    } else {
-        // Clear localStorage if no user
-        localStorage.removeItem("user"); 
-    }
-  }, [currentUser]);
-
   return (
-    <AuthContext.Provider value={{ currentUser, updateUser }}>
+    <AuthContext.Provider value={{ token, setToken, userRole, setUserRole, removeFromSession }}>
       {children}
     </AuthContext.Provider>
   );
 };
+
+export default AuthContext;

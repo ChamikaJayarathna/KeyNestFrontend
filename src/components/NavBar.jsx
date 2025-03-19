@@ -1,18 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import apiRequest from "../lib/apiRequest";
-import { AuthContext } from "../context/AuthContext";
 import ProfileDropdown from "./ProfileDropdown";
 import { jwtDecode } from "jwt-decode";
+import AuthContext from "../context/AuthContext";
 
 const NavBar = () => {
   const [profileDetail, setProfileDetail] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const location = useLocation();
-  const { currentUser } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
 
-  const token = currentUser?.token;
+  const location = useLocation();
   const isHome = location.pathname === "/";
 
   const navLinks = [
@@ -21,6 +20,10 @@ const NavBar = () => {
     { to: "/services", text: "Services" },
     { to: "/contact", text: "Contact" },
   ];
+
+  useEffect(() => {
+    GetProfile();
+  },[]);
 
   const GetProfile = async () => {
     try {
@@ -35,10 +38,6 @@ const NavBar = () => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    if (token) GetProfile();
-  }, [token]);
 
   return (
     <nav
@@ -79,7 +78,7 @@ const NavBar = () => {
           </div>
 
           <div className="flex items-center gap-6 relative">
-            {!currentUser ? (
+            {!token ? (
               <>
                 <Link to="/sign-in">
                   <button className="hidden md:block text-lg hover:text-white/80">
@@ -99,7 +98,7 @@ const NavBar = () => {
                   className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-400"
                 >
                   <img
-                    src={"./default-profile-avatar.jpg"}
+                    src={profileDetail?.profile_img}
                     alt="Profile"
                     className="w-full h-full object-cover"
                   />
