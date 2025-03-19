@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ReactQuill from "react-quill-new";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import apiRequest from "../../lib/apiRequest";
+import AuthContext from "../../context/AuthContext";
 
 const AddProperty = () => {
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
   const [selectedImages, setSelectedImages] = useState([]);
+
+  const { token } = useContext(AuthContext);
 
   let cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
   let cloudinaryPreset = import.meta.env.VITE_CLOUDINARY_PRESET;
@@ -52,6 +55,8 @@ const AddProperty = () => {
         utilities: inputs.utilities,
         pet: inputs.pet,
         images: imageUrls,
+      },{
+        headers: { Authorization: `Bearer ${token}` },
       });
 
       toast.success("New property added successfully 👍", {

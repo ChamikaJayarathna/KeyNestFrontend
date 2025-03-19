@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
+import AuthContext from "../../context/AuthContext";
 
 const ViewProperty = () => {
   const [properties, setProperties] = useState([]);
+
+  const { token } = useContext(AuthContext);
 
   const fetchAllProperties = async () => {
     try {
@@ -17,7 +20,9 @@ const ViewProperty = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this property?")) {
       try {
-        await apiRequest.delete(`/property/delete-property/${id}`);
+        await apiRequest.delete(`/property/delete-property/${id}`,{
+          headers: { Authorization: `Bearer ${token}` },
+        });
         setProperties(properties.filter((property) => property._id !== id));
       } catch (error) {
         console.log("Error deleting property:", error);

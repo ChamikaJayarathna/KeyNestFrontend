@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import ReactQuill from "react-quill-new";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
+import AuthContext from "../../context/AuthContext";
 
 const UpdateProperty = () => {
   const { id } = useParams();
@@ -20,10 +21,14 @@ const UpdateProperty = () => {
     pet: "allowed",
   });
 
+  const { token } = useContext(AuthContext);
+
   const getProperty = async () => {
     try {
       const response = await apiRequest.get(
-        `/property/get-single-property/${id}`
+        `/property/get-single-property/${id}`,{
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
       const data = response.data;
       setProperty({

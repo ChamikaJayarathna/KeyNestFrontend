@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
+import AuthContext from "../../context/AuthContext";
 
 const SingleProperty = () => {
   const { id } = useParams();
   const [properties, setProperties] = useState([]);
 
+  const { token } = useContext(AuthContext);
+
   const fetchSingleProperties = async () => {
     try {
-      const res = await apiRequest.get(`/property/get-single-property/${id}`);
+      const res = await apiRequest.get(`/property/get-single-property/${id}`,{
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setProperties(res.data);
     } catch (error) {
       console.log(error);
