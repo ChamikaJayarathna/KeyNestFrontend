@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
+import Header from "./admin-components/Header";
+import Sidebar from "./admin-components/Sidebar";
+import Footer from "./admin-components/Footer";
 
 const AdminLayout = () => {
   useEffect(() => {
@@ -14,9 +17,12 @@ const AdminLayout = () => {
 
   return (
     <div className="app-wrapper">
+      <Header />
+      <Sidebar />
       <div className="content">
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 };
