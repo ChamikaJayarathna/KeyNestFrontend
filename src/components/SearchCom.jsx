@@ -3,11 +3,14 @@ import { CiSearch } from "react-icons/ci";
 import { LuImagePlus } from "react-icons/lu";
 import { PiSlidersHorizontal } from "react-icons/pi";
 import FileUpload from "./FileUpload";
+import { useNavigate } from "react-router-dom";
 
 const SearchCom = () => {
   const [activeTab, setActiveTab] = useState("Buy");
   const [isFileUploadVisible, setIsFileUploadVisible] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const fileUploadRef = useRef(null);
+  const navigate = useNavigate();
 
   const tabs = ["Buy", "Rent", "Sold"];
 
@@ -29,6 +32,12 @@ const SearchCom = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      navigate(`/search/${searchQuery}`);
+    }
+  };
 
   return (
     <div className="w-full max-w-3xl bg-custom-navy-blue/60 p-4 rounded-xl backdrop-blur-sm">
@@ -55,6 +64,8 @@ const SearchCom = () => {
           <input
             type="text"
             placeholder="Search here..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-transparent outline-none pl-10 pr-4 text-white placeholder-gray-400"
           />
           <button
@@ -79,7 +90,7 @@ const SearchCom = () => {
           <span>Filters</span>
         </button>
 
-        <button className="bg-white text-black font-medium px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+        <button onClick={handleSearch} className="bg-white text-black font-medium px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
           Search
         </button>
       </div>

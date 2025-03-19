@@ -12,6 +12,7 @@ import ViewProperty from "./admin/admin-pages/ViewProperty";
 import SingleProperty from "./admin/admin-pages/SingleProperty";
 import AddProperty from "./admin/admin-pages/AddProperty";
 import UpdateProperty from "./admin/admin-pages/UpdateProperty";
+import SearchPage from "./pages/SearchPage";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const App = () => {
     {
       path: "/predict-property",
       element: <PredictPropertyPage />,
+    },
+    {
+      path: "/search/:query",
+      element: <SearchPage />,
     },
     {
       path: "/admin",
