@@ -7,6 +7,7 @@ import PropertyPage from "./pages/PropertyPage";
 import { AuthContextProvider } from "./context/AuthContext";
 import PredictPropertyPage from "./pages/PredictPropertyPage";
 import AdminLayout from "./admin/AdminLayout";
+import Dashboard from "./admin/admin-pages/Dashboard";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -33,6 +34,12 @@ const App = () => {
     {
       path: "/admin",
       element: <AdminLayout />,
+      children: [
+        {
+          path: "dashboard",
+          element: <Dashboard />,
+        },
+      ]
     },
   ]);
 
