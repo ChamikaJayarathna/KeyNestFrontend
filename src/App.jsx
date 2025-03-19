@@ -8,6 +8,7 @@ import { AuthContextProvider } from "./context/AuthContext";
 import PredictPropertyPage from "./pages/PredictPropertyPage";
 import AdminLayout from "./admin/AdminLayout";
 import Dashboard from "./admin/admin-pages/Dashboard";
+import ViewProperty from "./admin/admin-pages/ViewProperty";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const App = () => {
         {
           path: "dashboard",
           element: <Dashboard />,
+        },
+        {
+          path: "view-property",
+          element: <ViewProperty />,
         },
       ]
     },
