@@ -10,6 +10,7 @@ import AdminLayout from "./admin/AdminLayout";
 import Dashboard from "./admin/admin-pages/Dashboard";
 import ViewProperty from "./admin/admin-pages/ViewProperty";
 import SingleProperty from "./admin/admin-pages/SingleProperty";
+import AddProperty from "./admin/admin-pages/AddProperty";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const App = () => {
         {
           path: "view-single-property/:id",
           element: <SingleProperty />,
+        },
+        {
+          path: "add-property",
+          element: <AddProperty />,
         },
       ]
     },
