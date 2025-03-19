@@ -9,6 +9,7 @@ import PredictPropertyPage from "./pages/PredictPropertyPage";
 import AdminLayout from "./admin/AdminLayout";
 import Dashboard from "./admin/admin-pages/Dashboard";
 import ViewProperty from "./admin/admin-pages/ViewProperty";
+import SingleProperty from "./admin/admin-pages/SingleProperty";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const App = () => {
         {
           path: "view-property",
           element: <ViewProperty />,
+        },
+        {
+          path: "view-single-property/:id",
+          element: <SingleProperty />,
         },
       ]
     },
