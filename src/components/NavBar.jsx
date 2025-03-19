@@ -95,7 +95,7 @@ const NavBar = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowDropdown((prev) => !prev)}
-                  className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-400"
+                  className="w-14 h-14 rounded-full overflow-hidden border-1 border-white cursor-pointer"
                 >
                   <img
                     src={profileDetail?.profile_img}
