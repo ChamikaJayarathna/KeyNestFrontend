@@ -58,16 +58,23 @@ const NavBar = () => {
           <div className="hidden lg:flex flex-1 justify-center space-x-8">
             {navLinks.map((link) => (
               <NavLink
-                key={link.to}
-                to={link.to}
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-lg font-medium transition-colors ${
-                    isActive ? "bg-white/10" : "hover:bg-white/10"
-                  }`
-                }
-              >
-                {link.text}
-              </NavLink>
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `px-3 py-2 rounded-md text-lg font-medium transition-colors ${
+                  isActive
+                    ? isHome
+                      ? "bg-white/20 text-white"
+                      : "bg-custom-teal-blue text-white"
+                    : isHome
+                    ? "hover:bg-white/20 hover:text-white"
+                    : "hover:bg-gray-200 hover:text-custom-teal-blue"
+                }`
+              }
+            >
+              {link.text}
+            </NavLink>
+            
             ))}
           </div>
 
