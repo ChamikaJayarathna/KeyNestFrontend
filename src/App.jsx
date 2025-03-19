@@ -1,26 +1,46 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
-import PropertyPage from './pages/PropertyPage';
-import { AuthContextProvider } from './context/AuthContext';
-import PredictPropertyPage from './pages/PredictPropertyPage';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import PropertyPage from "./pages/PropertyPage";
+import { AuthContextProvider } from "./context/AuthContext";
+import PredictPropertyPage from "./pages/PredictPropertyPage";
+import AdminLayout from "./admin/AdminLayout";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/sign-in",
+      element: <SignIn />,
+    },
+    {
+      path: "/sign-up",
+      element: <SignUp />,
+    },
+    {
+      path: "/property",
+      element: <PropertyPage />,
+    },
+    {
+      path: "/predict-property",
+      element: <PredictPropertyPage />,
+    },
+    {
+      path: "/admin",
+      element: <AdminLayout />,
+    },
+  ]);
+
   return (
     <AuthContextProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/sign-in' element={<SignIn/>} />
-          <Route path='/sign-up' element={<SignUp/>} />
-          <Route path='/property' element={<PropertyPage/>} />
-          <Route path='/predict-property' element={<PredictPropertyPage/>} />
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </AuthContextProvider>
   );
-}
+};
 
 export default App;
