@@ -1,8 +1,11 @@
 import React from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdOpenInNew } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const PropertyCard = ({ property }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-[305px] h-[360px] max-w-sm bg-gray-50 rounded-2xl shadow-lg overflow-hidden mt-10">
       <img
@@ -27,7 +30,8 @@ const PropertyCard = ({ property }) => {
             : ""}
         </span>
         <span className="bg-gray-100 text-gray-600 text-sm font-semibold px-3 py-1 border ml-[-1px]">
-          {property?.property?.charAt(0).toUpperCase() + property?.property?.slice(1)}
+          {property?.property?.charAt(0).toUpperCase() +
+            property?.property?.slice(1)}
         </span>
       </div>
 
@@ -48,7 +52,10 @@ const PropertyCard = ({ property }) => {
           <span className="font-bold">LKR {property?.price}</span>
           <span className="text-sm text-gray-500 font-normal"> /Sqft</span>
         </span>
-        <h2 className="text-primary text-sm flex gap-2 items-center">
+        <h2
+          className="text-primary text-sm flex gap-2 items-center"
+          onClick={() => navigate(`/property-details/${property?._id}`)}
+        >
           View Details
           <MdOpenInNew />
         </h2>

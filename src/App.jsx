@@ -13,6 +13,7 @@ import SingleProperty from "./admin/admin-pages/SingleProperty";
 import AddProperty from "./admin/admin-pages/AddProperty";
 import UpdateProperty from "./admin/admin-pages/UpdateProperty";
 import SearchPage from "./pages/SearchPage";
+import PropertyDetailsCard from "./components/PropertyDetailsCard";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const App = () => {
     {
       path: "/property",
       element: <PropertyPage />,
+    },
+    {
+      path: "/property-details/:id",
+      element: <PropertyDetailsCard />,
     },
     {
       path: "/predict-property",
