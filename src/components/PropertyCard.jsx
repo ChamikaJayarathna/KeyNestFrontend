@@ -6,7 +6,7 @@ const PropertyCard = ({ property }) => {
   return (
     <div className="w-[305px] h-[360px] max-w-sm bg-gray-50 rounded-2xl shadow-lg overflow-hidden mt-10">
       <img
-        src={property?.images[0]?.url}
+        src={property?.images[0]}
         className="w-full h-[190px] object-cover"
       />
 
