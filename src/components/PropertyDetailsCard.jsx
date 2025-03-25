@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import ImageGallery from "./ImageGallery";
 import Specification from "./Specification";
 import Description from "./Description";
+import PropertyTitle from "./PropertyTitle";
 
 const PropertyDetailsCard = () => {
   const [propertyDetails, setPropertyDetails] = useState();
@@ -27,11 +28,12 @@ const PropertyDetailsCard = () => {
   return (
     <div>
         <div className="p-10 md:px-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 w-full mt-10 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-10 gap-5">
                 <div className="">
                     <ImageGallery propertyDetails={propertyDetails} />
                 </div>
                 <div className="">
+                    <PropertyTitle propertyDetails={propertyDetails} />
                     <Specification propertyDetails={propertyDetails} />
                     <Description propertyDetails={propertyDetails} />
                 </div>
