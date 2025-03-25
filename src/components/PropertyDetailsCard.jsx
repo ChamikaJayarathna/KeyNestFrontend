@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import apiRequest from "../lib/apiRequest";
 import { useParams } from "react-router-dom";
 import ImageGallery from "./ImageGallery";
+import Specification from "./Specification";
 
 const PropertyDetailsCard = () => {
   const [propertyDetails, setPropertyDetails] = useState();
@@ -25,6 +26,7 @@ const PropertyDetailsCard = () => {
   return (
     <div>
       <ImageGallery propertyDetails={propertyDetails} />
+      <Specification propertyDetails={propertyDetails} />
     </div>
   );
 };
