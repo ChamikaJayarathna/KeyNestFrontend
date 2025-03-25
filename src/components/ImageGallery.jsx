@@ -7,7 +7,7 @@ const ImageGallery = ({ propertyDetails }) => {
   return (
     <div className="flex flex-col items-start">
       <div className="animate-fade-in w-full">
-        <div className="relative mb-4 mt-4 rounded-xl overflow-hidden bg-gray-100 max-w-[800px] mr-auto">
+        <div className="relative mb-4 rounded-xl overflow-hidden">
           <AspectRatio ratio={4 / 3} className="relative w-full">
             <img
               src={propertyDetails?.images?.[selectedImage]}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Description = () => {
+const Description = ({propertyDetails}) => {
   return (
     <div>Description</div>
   );
