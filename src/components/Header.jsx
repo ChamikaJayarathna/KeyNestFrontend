@@ -1,35 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button } from "./ui/button";
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "@/context/AuthContext";
-import apiRequest from "@/lib/apiRequest";
 import ProfileDropdown from "./ProfileDropdown";
-import { jwtDecode } from "jwt-decode";
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
-  const [profileDetail, setProfileDetail] = useState(null);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-
   const { token } = useContext(AuthContext);
-
-  const GetProfile = async () => {
-    try {
-      const decodedToken = jwtDecode(token);
-      const userId = decodedToken._id;
-
-      const response = await apiRequest.get(`/auth/profile/${userId}`);
-      const data = response.data;
-      setProfileDetail(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    if (token) {
-      GetProfile();
-    }
-  }, [token]);
 
   return (
     <section className="flex justify-between items-center shadow-sm p-4 relative">
@@ -65,12 +43,11 @@ const Header = () => {
           </Link>
         ) : (
           <div className="relative">
-            <button onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}>
-              <img
-                src={profileDetail?.profile_img}
-                className="w-13 h-13 object-cover rounded-full border-3 border-gray-300"
-                alt="Profile"
-              />
+            <button
+              onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
+              className="flex items-center justify-center"
+            >
+              <FaUserCircle className="w-9 h-9 text-gray-800" />
             </button>
             {isProfileMenuOpen && (
               <div className="absolute right-0 mt-1 w-48 bg-white text-black shadow-lg rounded-lg z-50">
