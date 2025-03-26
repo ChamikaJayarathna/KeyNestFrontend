@@ -53,7 +53,7 @@ const PropertyCard = ({ property }) => {
           <span className="text-sm text-gray-500 font-normal"> /Sqft</span>
         </span>
         <h2
-          className="text-primary text-sm flex gap-2 items-center"
+          className="text-primary text-sm flex gap-2 items-center cursor-pointer"
           onClick={() => navigate(`/property-details/${property?._id}`)}
         >
           View Details
