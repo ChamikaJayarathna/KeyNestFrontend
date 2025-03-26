@@ -25,12 +25,12 @@ const Header = () => {
             Property
           </li>
         </NavLink>
-        <NavLink to={"/services"}>
+        <NavLink>
           <li className="font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary">
             Services
           </li>
         </NavLink>
-        <NavLink to={"/contact"}>
+        <NavLink>
           <li className="font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary">
             Contact
           </li>
