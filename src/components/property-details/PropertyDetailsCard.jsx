@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import apiRequest from "../lib/apiRequest";
 import { useParams } from "react-router-dom";
-import ImageGallery from "./ImageGallery";
-import Specification from "./Specification";
-import Description from "./Description";
-import PropertyTitle from "./PropertyTitle";
+import ImageGallery from "./components/ImageGallery";
+import PropertyTitle from "./components/PropertyTitle";
+import Specification from "./components/Specification";
+import Description from "./components/Description";
 
 const PropertyDetailsCard = () => {
   const [propertyDetails, setPropertyDetails] = useState();

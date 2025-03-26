@@ -13,7 +13,7 @@ import SingleProperty from "./admin/admin-pages/SingleProperty";
 import AddProperty from "./admin/admin-pages/AddProperty";
 import UpdateProperty from "./admin/admin-pages/UpdateProperty";
 import SearchPage from "./pages/SearchPage";
-import PropertyDetailsCard from "./components/PropertyDetailsCard";
+import PropertyDetailsCard from "./components/property-details/PropertyDetailsCard";
 
 const App = () => {
   const router = createBrowserRouter([
