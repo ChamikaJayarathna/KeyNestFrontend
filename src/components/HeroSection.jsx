@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 const HeroSection = () => {
   return (
     <div className="relative w-full h-screen">
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="absolute inset-0">
         <img
           src={backgroundImage}

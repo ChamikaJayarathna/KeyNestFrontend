@@ -1,5 +1,5 @@
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import React, { useState } from "react";
-import { AspectRatio } from "./ui/aspect-ratio";
 
 const ImageGallery = ({ propertyDetails }) => {
   const [selectedImage, setSelectedImage] = useState(0);
