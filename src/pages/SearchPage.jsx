@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import apiRequest from "../lib/apiRequest";
 import PropertyCard from "../components/PropertyCard";
 import { useParams } from "react-router-dom";
-import NavBar from "../components/NavBar";
+import Header from "@/components/Header";
 
 const SearchPage = () => {
   const [property, setProperty] = useState([]);
@@ -25,10 +25,7 @@ const SearchPage = () => {
 
   return (
     <div>
-      <div className="mb-10">
-        <NavBar />
-      </div>
-
+      <Header/>
       <div className="p-15 md:px-20">
         <div className="grid grid-cols-4 gap-8">
           {property.length > 0

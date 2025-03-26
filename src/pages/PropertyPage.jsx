@@ -1,12 +1,12 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import SidebarFilter from "../components/SidebarFilter";
 import PropertyList from "../components/PropertyList";
+import Header from "@/components/Header";
 
 const PropertyPage = () => {
   return (
     <>
-      <NavBar />
+      <Header/>
       <div className="flex h-[calc(100vh-60px)] pt-[80px]">
         <div className="w-1/4 h-full p-4 overflow-auto mt-5 no-scrollbar">
           <SidebarFilter />

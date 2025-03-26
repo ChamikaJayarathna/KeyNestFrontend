@@ -1,12 +1,10 @@
 import React from "react";
 import backgroundImage from "../assets/Images/background.jpeg";
 import SearchCom from "./SearchCom";
-import NavBar from "./NavBar";
 
 const HeroSection = () => {
   return (
     <div className="relative w-full h-screen">
-      {/* <NavBar /> */}
       <div className="absolute inset-0">
         <img
           src={backgroundImage}
