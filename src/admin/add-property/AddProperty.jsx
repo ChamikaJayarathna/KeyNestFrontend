@@ -1,4 +1,5 @@
 import React from 'react';
+import propertyDetails from '../../Shared/propertyDetails.json';
 
 const AddProperty = () => {
   return (
