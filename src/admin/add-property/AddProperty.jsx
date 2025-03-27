@@ -2,7 +2,11 @@ import React from 'react';
 
 const AddProperty = () => {
   return (
-    <div>AddProperty</div>
+    <div className="px-5 py-4">
+      <form className='p-5 border border-primary rounded'>
+
+      </form>
+    </div>
   );
 }
 

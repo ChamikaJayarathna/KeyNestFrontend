@@ -1,0 +1,92 @@
+{
+  "propertyDetails": [
+    {
+      "label": "Property Title",
+      "name": "propertyTitle",
+      "fieldType": "text",
+      "required": true,
+      "icon": "bi bi-clipboard-fill"
+    },
+    {
+      "label": "Address",
+      "name": "address",
+      "fieldType": "text",
+      "required": true,
+      "icon": "bi bi-mailbox2"
+    },
+    {
+      "label": "Property Description",
+      "name": "propertyDescription",
+      "fieldType": "textarea",
+      "required": true,
+      "icon": "bi bi-file-earmark-font-fill"
+    },
+    {
+      "label": "Selling Price",
+      "name": "sellingPrice",
+      "fieldType": "text",
+      "required": true,
+      "icon": "bi bi-cash"
+    },
+    {
+      "label": "City",
+      "name": "city",
+      "fieldType": "text",
+      "required": true,
+      "icon": "bi bi-geo-alt-fill"
+    },
+    {
+      "label": "Bedroom",
+      "name": "bedroom",
+      "fieldType": "number",
+      "required": true,
+      "icon": "bi bi-bed"
+    },
+    {
+      "label": "Property Type",
+      "name": "propertyType",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Apartment", "House", "Land"],
+      "icon": "bi bi-buildings-fill"
+    },
+    {
+      "label": "Category",
+      "name": "category",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Rent", "Buy"],
+      "icon": "bi bi-grid-1x2-fill"
+    },
+    {
+      "label": "Utilities",
+      "name": "utilities",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Owner", "Tenant", "Shared"],
+      "icon": "bi bi-pin-angle-fill"
+    },
+    {
+      "label": "Animal",
+      "name": "animal",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Allowed", "Not allowed"],
+      "icon": "bi bi-heart-fill"
+    },
+    {
+      "label": "Latitude",
+      "name": "latitude",
+      "fieldType": "number",
+      "required": true,
+      "icon": "bi bi-crosshair"
+    },
+    {
+      "label": "Longitude",
+      "name": "longitude",
+      "fieldType": "number",
+      "required": true,
+      "icon": "bi bi-crosshair2"
+    }
+  ]
+}
