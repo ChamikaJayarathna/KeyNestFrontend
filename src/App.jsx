@@ -7,13 +7,11 @@ import PropertyPage from "./pages/PropertyPage";
 import { AuthProvider } from "./context/AuthContext";
 import PredictPropertyPage from "./pages/PredictPropertyPage";
 import AdminLayout from "./admin/AdminLayout";
-import Dashboard from "./admin/admin-pages/Dashboard";
-import ViewProperty from "./admin/admin-pages/ViewProperty";
-import SingleProperty from "./admin/admin-pages/SingleProperty";
-import AddProperty from "./admin/admin-pages/AddProperty";
-import UpdateProperty from "./admin/admin-pages/UpdateProperty";
 import SearchPage from "./pages/SearchPage";
 import PropertyDetailsCard from "./components/property-details/PropertyDetailsCard";
+import Dashboard from "./admin/dashboard/Dashboard";
+import AddProperty from "./admin/add-property/AddProperty";
+import ViewProperty from "./admin/view-property/ViewProperty";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -58,16 +56,8 @@ const App = () => {
           element: <ViewProperty />,
         },
         {
-          path: "view-single-property/:id",
-          element: <SingleProperty />,
-        },
-        {
           path: "add-property",
           element: <AddProperty />,
-        },
-        {
-          path: "update-property/:id",
-          element: <UpdateProperty />,
         },
       ],
     },
