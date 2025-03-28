@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  BarChart2,
+  Blocks,
   Menu,
   HousePlus,
-  ScrollText,
+  Building2,
   ArrowLeft,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -12,13 +12,13 @@ import { Link } from "react-router-dom";
 const SIDEBAR_ITEMS = [
   {
     name: "Dashboard",
-    icon: BarChart2,
+    icon: Blocks,
     color: "#6366f1",
     href: "/admin/dashboard",
   },
   {
     name: "View Property",
-    icon: ScrollText,
+    icon: Building2,
     color: "#10B981",
     href: "/admin/view-property",
   },
