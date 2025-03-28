@@ -3,8 +3,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   BarChart2,
   Menu,
-  ShoppingBag,
-  Columns2,
+  HousePlus,
+  ScrollText,
   ArrowLeft,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -17,14 +17,14 @@ const SIDEBAR_ITEMS = [
     href: "/admin/dashboard",
   },
   {
-    name: "View Listing",
-    icon: Columns2,
+    name: "View Property",
+    icon: ScrollText,
     color: "#10B981",
     href: "/admin/view-property",
   },
   {
-    name: "Add Listing",
-    icon: ShoppingBag,
+    name: "Add Property",
+    icon: HousePlus,
     color: "#8B5CF6",
     href: "/admin/add-property",
   },
