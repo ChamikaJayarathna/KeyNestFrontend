@@ -2,6 +2,8 @@ import React from 'react';
 import propertyDetails from "../../Shared/propertyDetails.json";
 import InputField from './components/InputField';
 import DropdownField from './components/DropdownField';
+import TextAreaField from './components/TextAreaField';
+import { Button } from '@/components/ui/button';
 
 const AddProperty = () => {
   return (
@@ -22,12 +24,17 @@ const AddProperty = () => {
                   {item.fieldType === "text" || item.fieldType === "number" ? 
                     <InputField item={item} /> 
                     : item.fieldType === "dropdown" ? 
-                    <DropdownField item={item} />
+                    <DropdownField item={item} /> 
+                    : item.fieldType === "textarea" ?
+                    <TextAreaField item={item} />
                     : null
                   }
                 </div>
               ))}
             </div>
+          </div>
+          <div className="mt-10 flex justify-end">
+            <Button type="submit" className="bg-red-500 hover:bg-red-600">Submit</Button>
           </div>
         </form>
       </div>
