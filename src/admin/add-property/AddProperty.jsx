@@ -9,6 +9,7 @@ import Header from "../admin-components/Header";
 import AuthContext from "@/context/AuthContext";
 import apiRequest from "@/lib/apiRequest";
 import toast, { Toaster } from "react-hot-toast";
+import { Separator } from "@/components/ui/separator";
 
 const AddProperty = () => {
   const [formData, setFormData] = useState({});
@@ -86,6 +87,9 @@ const AddProperty = () => {
                 ))}
               </div>
             </div>
+
+            <Separator className="my-6" />
+
             <div className="mt-10 flex justify-end">
               <Button type="submit" className="bg-red-500 hover:bg-red-600">
                 Submit
