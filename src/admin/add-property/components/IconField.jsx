@@ -11,6 +11,7 @@ import { GiSittingDog } from "react-icons/gi";
 import { MdLocationSearching } from "react-icons/md";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 import { FaFileAlt } from "react-icons/fa";
+import { FaBath } from "react-icons/fa6";
 
 const iconMap = {
   FaClipboardList: <FaClipboardList />,
@@ -18,6 +19,7 @@ const iconMap = {
   FaMoneyBill: <FaMoneyBill />,
   IoHome: <IoHome />,
   FaBed: <FaBed />,
+  FaBath: <FaBath />,
   BsBuildingsFill: <BsBuildingsFill />,
   IoGrid: <IoGrid />,
   FaTools: <FaTools />,

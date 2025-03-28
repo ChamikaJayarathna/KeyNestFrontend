@@ -36,6 +36,13 @@
       "icon": "FaBed"
     },
     {
+      "label": "Bathroom",
+      "name": "bathroom",
+      "fieldType": "number",
+      "required": true,
+      "icon": "FaBath"
+    },
+    {
       "label": "Property Type",
       "name": "propertyType",
       "fieldType": "dropdown",
