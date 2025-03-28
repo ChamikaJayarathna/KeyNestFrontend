@@ -15,13 +15,6 @@
       "icon": "BiMailbox2"
     },
     {
-      "label": "Property Description",
-      "name": "propertyDescription",
-      "fieldType": "textarea",
-      "required": true,
-      "icon": "BiFileEarmarkFontFill"
-    },
-    {
       "label": "Selling Price",
       "name": "sellingPrice",
       "fieldType": "text",
@@ -87,6 +80,13 @@
       "fieldType": "number",
       "required": true,
       "icon": "BiCrosshair2"
+    },
+    {
+      "label": "Property Description",
+      "name": "propertyDescription",
+      "fieldType": "textarea",
+      "required": true,
+      "icon": "BiFileEarmarkFontFill"
     }
   ]
 }
