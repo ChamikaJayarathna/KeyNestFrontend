@@ -5,42 +5,42 @@
       "name": "propertyTitle",
       "fieldType": "text",
       "required": true,
-      "icon": "bi bi-clipboard-fill"
+      "icon": "BiClipboardFill"
     },
     {
       "label": "Address",
       "name": "address",
       "fieldType": "text",
       "required": true,
-      "icon": "bi bi-mailbox2"
+      "icon": "BiMailbox2"
     },
     {
       "label": "Property Description",
       "name": "propertyDescription",
       "fieldType": "textarea",
       "required": true,
-      "icon": "bi bi-file-earmark-font-fill"
+      "icon": "BiFileEarmarkFontFill"
     },
     {
       "label": "Selling Price",
       "name": "sellingPrice",
       "fieldType": "text",
       "required": true,
-      "icon": "bi bi-cash"
+      "icon": "BiCash"
     },
     {
       "label": "City",
       "name": "city",
       "fieldType": "text",
       "required": true,
-      "icon": "bi bi-geo-alt-fill"
+      "icon": "BiGeoAltFill"
     },
     {
       "label": "Bedroom",
       "name": "bedroom",
       "fieldType": "number",
       "required": true,
-      "icon": "bi bi-bed"
+      "icon": "BiBed"
     },
     {
       "label": "Property Type",
@@ -48,7 +48,7 @@
       "fieldType": "dropdown",
       "required": true,
       "options": ["Apartment", "House", "Land"],
-      "icon": "bi bi-buildings-fill"
+      "icon": "BiBuildingsFill"
     },
     {
       "label": "Category",
@@ -56,7 +56,7 @@
       "fieldType": "dropdown",
       "required": true,
       "options": ["Rent", "Buy"],
-      "icon": "bi bi-grid-1x2-fill"
+      "icon": "BiGridFill"
     },
     {
       "label": "Utilities",
@@ -64,7 +64,7 @@
       "fieldType": "dropdown",
       "required": true,
       "options": ["Owner", "Tenant", "Shared"],
-      "icon": "bi bi-pin-angle-fill"
+      "icon": "BiPinAngleFill"
     },
     {
       "label": "Animal",
@@ -72,21 +72,21 @@
       "fieldType": "dropdown",
       "required": true,
       "options": ["Allowed", "Not allowed"],
-      "icon": "bi bi-heart-fill"
+      "icon": "BiHeartFill"
     },
     {
       "label": "Latitude",
       "name": "latitude",
       "fieldType": "number",
       "required": true,
-      "icon": "bi bi-crosshair"
+      "icon": "BiCrosshair"
     },
     {
       "label": "Longitude",
       "name": "longitude",
       "fieldType": "number",
       "required": true,
-      "icon": "bi bi-crosshair2"
+      "icon": "BiCrosshair2"
     }
   ]
 }

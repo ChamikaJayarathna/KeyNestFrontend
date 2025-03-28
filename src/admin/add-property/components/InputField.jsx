@@ -1,9 +1,16 @@
-import React from 'react';
+import React from "react";
+import { Input } from "@/components/ui/input";
 
-const InputField = () => {
+const InputField = ({ item }) => {
   return (
-    <div>InputField</div>
+    <div>
+      <Input
+        type={item?.fieldType}
+        name={item?.name}
+        required={item?.required}
+      />
+    </div>
   );
-}
+};
 
 export default InputField;
