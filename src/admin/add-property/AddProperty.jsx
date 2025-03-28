@@ -9,6 +9,7 @@ import Header from "../admin-components/Header";
 
 const AddProperty = () => {
   const [formData, setFormData] = useState({});
+  const [propertyInfo, setPropertyInfo] = useState();
 
   const handleInputChange = (name, value) => {
     setFormData((prevData) => ({
@@ -43,17 +44,20 @@ const AddProperty = () => {
                     <InputField
                       item={item}
                       handleInputChange={handleInputChange}
+                      propertyInfo={propertyInfo}
                     />
                   ) : item.fieldType === "dropdown" ? (
                     <DropdownField
                       item={item}
                       handleInputChange={handleInputChange}
+                      propertyInfo={propertyInfo}
                     />
                   ) : item.fieldType === "textarea" ? (
                     <div className="grid grid-cols-1">
                       <TextAreaField
                         item={item}
                         handleInputChange={handleInputChange}
+                        propertyInfo={propertyInfo}
                       />
                     </div>
                   ) : null}

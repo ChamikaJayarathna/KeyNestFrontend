@@ -7,15 +7,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const DropdownField = ({ item, handleInputChange }) => {
+const DropdownField = ({ item, handleInputChange, propertyInfo }) => {
   return (
     <div>
       <Select
         onValueChange={(value) => handleInputChange(item.name, value)}
         required={item.required}
+        // defaultValue={propertyInfo?.[item?.name]}
+        value={propertyInfo?.[item?.name]}
       >
         <SelectTrigger className="w-full">
-          <SelectValue placeholder={item.label} />
+          <SelectValue placeholder={propertyInfo?.[item?.name]?propertyInfo?.[item?.name]:item.label} />
         </SelectTrigger>
         <SelectContent>
           {item?.options?.map((option, index) => (
