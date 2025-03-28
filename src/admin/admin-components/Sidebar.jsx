@@ -1,105 +1,103 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  BarChart2,
+  Menu,
+  ShoppingBag,
+  Columns2,
+  ArrowLeft,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+
+const SIDEBAR_ITEMS = [
+  {
+    name: "Dashboard",
+    icon: BarChart2,
+    color: "#6366f1",
+    href: "/admin/dashboard",
+  },
+  {
+    name: "View Listing",
+    icon: Columns2,
+    color: "#10B981",
+    href: "/admin/view-property",
+  },
+  {
+    name: "Add Listing",
+    icon: ShoppingBag,
+    color: "#8B5CF6",
+    href: "/admin/add-property",
+  },
+];
 
 const Sidebar = () => {
-  const [isDashboardOpen, setIsDashboardOpen] = useState(false);
-  const [isPropertyOpen, setIsPropertyOpen] = useState(false);
-
-  const toggleDashboardMenu = () => {
-    setIsDashboardOpen(!isDashboardOpen);
-  };
-
-  const togglePropertyMenu = () => {
-    setIsPropertyOpen(!isPropertyOpen);
-  };
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
-    <aside
-      className="app-sidebar bg-body-secondary shadow"
-      data-bs-theme="dark"
+    <motion.div
+      className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${
+        isSidebarOpen ? "w-64" : "w-20"
+      }`}
+      animate={{ width: isSidebarOpen ? 256 : 80 }}
     >
-      <div className="sidebar-brand">
-        <Link to="/admin/dashboard" className="brand-link text-center">
-          <span className="brand-text font-weight-light">KeyNest Admin</span>
+      <div className="h-full bg-gray-800 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-700">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="p-2 rounded-full hover:bg-gray-700 transition-colors max-w-fit"
+        >
+          <Menu size={24} />
+        </motion.button>
+
+        <nav className="mt-8 flex-grow">
+          {SIDEBAR_ITEMS.map((item) => (
+            <Link key={item.href} to={item.href}>
+              <motion.div className="flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2">
+                <item.icon
+                  size={20}
+                  style={{ color: item.color, minWidth: "20px" }}
+                />
+                <AnimatePresence>
+                  {isSidebarOpen && (
+                    <motion.span
+                      className="ml-4 whitespace-nowrap"
+                      initial={{ opacity: 0, width: 0 }}
+                      animate={{ opacity: 1, width: "auto" }}
+                      exit={{ opacity: 0, width: 0 }}
+                      transition={{ duration: 0.2, delay: 0.3 }}
+                    >
+                      {item.name}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            </Link>
+          ))}
+        </nav>
+        <Link to="/" className="mt-auto">
+          <motion.div className="flex items-center p-4 text-sm font-medium rounded-lg hover:bg-gray-700 transition-colors mb-8">
+            <ArrowLeft
+              size={20}
+              style={{ color: "#ffffff", minWidth: "20px" }}
+            />
+            <AnimatePresence>
+              {isSidebarOpen && (
+                <motion.span
+                  className="ml-4 whitespace-nowrap"
+                  initial={{ opacity: 0, width: 0 }}
+                  animate={{ opacity: 1, width: "auto" }}
+                  exit={{ opacity: 0, width: 0 }}
+                  transition={{ duration: 0.2, delay: 0.3 }}
+                >
+                  Back to Home
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </Link>
       </div>
-      <div className="sidebar-wrapper">
-        <nav className="mt-2">
-          <ul
-            className="nav sidebar-menu flex-column"
-            data-lte-toggle="treeview"
-            role="menu"
-            data-accordion="false"
-          >
-            <li className={`nav-item ${isDashboardOpen ? "menu-open" : ""}`}>
-              <a
-                href="#"
-                className={`nav-link ${isDashboardOpen ? "active" : ""}`}
-                onClick={toggleDashboardMenu}
-              >
-                <i className="nav-icon bi bi-speedometer" />
-                <p>
-                  Dashboard
-                  <i
-                    className={`nav-arrow bi ${
-                      isDashboardOpen ? "bi-chevron-down" : "bi-chevron-right"
-                    }`}
-                  />
-                </p>
-              </a>
-              <ul
-                className={`nav nav-treeview ${
-                  isDashboardOpen ? "d-block" : "d-none"
-                }`}
-              >
-                <li className="nav-item">
-                  <NavLink to="/admin/dashboard" className="nav-link">
-                    <i className="nav-icon bi bi-circle" />
-                    <p>Dashboard</p>
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-
-            <li className={`nav-item ${isPropertyOpen ? "menu-open" : ""}`}>
-              <a
-                href="#"
-                className={`nav-link ${isPropertyOpen ? "active" : ""}`}
-                onClick={togglePropertyMenu}
-              >
-                <i className="bi bi-house-add-fill"></i>
-                <p>
-                  Property
-                  <i
-                    className={`nav-arrow bi ${
-                      isPropertyOpen ? "bi-chevron-down" : "bi-chevron-right"
-                    }`}
-                  />
-                </p>
-              </a>
-              <ul
-                className={`nav nav-treeview ${
-                  isPropertyOpen ? "d-block" : "d-none"
-                }`}
-              >
-                <li className="nav-item">
-                  <NavLink to="/admin/view-property" className="nav-link">
-                    <i className="nav-icon bi bi-circle" />
-                    <p>View Property</p>
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink to="/admin/add-property" className="nav-link">
-                    <i className="nav-icon bi bi-circle" />
-                    <p>Add Property</p>
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </aside>
+    </motion.div>
   );
 };
 

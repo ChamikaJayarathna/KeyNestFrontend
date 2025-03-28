@@ -1,29 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./admin-components/Header";
 import Sidebar from "./admin-components/Sidebar";
-import Footer from "./admin-components/Footer";
 
 const AdminLayout = () => {
-  useEffect(() => {
-    import("admin-lte/dist/css/adminlte.min.css");
-    import("bootstrap/dist/css/bootstrap.min.css");
-    import("react-quill-new/dist/quill.snow.css");
-    import ("bootstrap-icons/font/bootstrap-icons.css");
-
-    import("admin-lte/dist/js/adminlte.min.js");
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
-    import("@popperjs/core/dist/umd/popper.min.js");
-  }, []);
-
   return (
-    <div className="app-wrapper">
-      <Header />
+    <div className="flex h-screen bg-gray-900 text-gray-100 overflow-hidden">
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 opacity-80" />
+        <div className="absolute inset-0 backdrop-blur-sm" />
+      </div>
       <Sidebar />
-      <div className="content">
+      <div className="flex-1 overflow-auto relative z-10">
         <Outlet />
       </div>
-      <Footer />
     </div>
   );
 };
