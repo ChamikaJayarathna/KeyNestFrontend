@@ -1,18 +1,30 @@
 import React from "react";
+import { FaClipboardList } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaMoneyBill } from "react-icons/fa";
+import { IoHome } from "react-icons/io5";
+import { FaBed } from "react-icons/fa";
+import { BsBuildingsFill } from "react-icons/bs";
+import { IoGrid } from "react-icons/io5";
+import { FaTools } from "react-icons/fa";
+import { GiSittingDog } from "react-icons/gi";
+import { MdLocationSearching } from "react-icons/md";
+import { FaLocationCrosshairs } from "react-icons/fa6";
+import { FaFileAlt } from "react-icons/fa";
 
 const iconMap = {
-  BiClipboardFill: <i className="bi bi-clipboard-fill" />,
-  BiMailbox2: <i className="bi bi-mailbox2" />,
-  BiFileEarmarkFontFill: <i className="bi bi-file-earmark-font-fill" />,
-  BiCash: <i className="bi bi-cash" />,
-  BiGeoAltFill: <i className="bi bi-geo-alt-fill" />,
-  BiBed: <i className="bi bi-bed" />,
-  BiBuildingsFill: <i className="bi bi-buildings-fill" />,
-  BiGridFill: <i className="bi bi-grid-1x2-fill" />,
-  BiPinAngleFill: <i className="bi bi-pin-angle-fill" />,
-  BiHeartFill: <i className="bi bi-heart-fill" />,
-  BiCrosshair: <i className="bi bi-crosshair" />,
-  BiCrosshair2: <i className="bi bi-crosshair2" />,
+  FaClipboardList: <FaClipboardList />,
+  FaLocationDot: <FaLocationDot />,
+  FaMoneyBill: <FaMoneyBill />,
+  IoHome: <IoHome />,
+  FaBed: <FaBed />,
+  BsBuildingsFill: <BsBuildingsFill />,
+  IoGrid: <IoGrid />,
+  FaTools: <FaTools />,
+  GiSittingDog: <GiSittingDog />,
+  MdLocationSearching: <MdLocationSearching />,
+  FaLocationCrosshairs: <FaLocationCrosshairs />,
+  FaFileAlt: <FaFileAlt />,
 };
 
 const IconField = ({ icon }) => {

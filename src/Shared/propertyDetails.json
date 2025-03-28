@@ -5,35 +5,35 @@
       "name": "propertyTitle",
       "fieldType": "text",
       "required": true,
-      "icon": "BiClipboardFill"
+      "icon": "FaClipboardList"
     },
     {
       "label": "Address",
       "name": "address",
       "fieldType": "text",
       "required": true,
-      "icon": "BiMailbox2"
+      "icon": "FaLocationDot"
     },
     {
       "label": "Selling Price",
       "name": "sellingPrice",
       "fieldType": "text",
       "required": true,
-      "icon": "BiCash"
+      "icon": "FaMoneyBill"
     },
     {
       "label": "City",
       "name": "city",
       "fieldType": "text",
       "required": true,
-      "icon": "BiGeoAltFill"
+      "icon": "IoHome"
     },
     {
       "label": "Bedroom",
       "name": "bedroom",
       "fieldType": "number",
       "required": true,
-      "icon": "BiBed"
+      "icon": "FaBed"
     },
     {
       "label": "Property Type",
@@ -41,7 +41,7 @@
       "fieldType": "dropdown",
       "required": true,
       "options": ["Apartment", "House", "Land"],
-      "icon": "BiBuildingsFill"
+      "icon": "BsBuildingsFill"
     },
     {
       "label": "Category",
@@ -49,7 +49,7 @@
       "fieldType": "dropdown",
       "required": true,
       "options": ["Rent", "Buy"],
-      "icon": "BiGridFill"
+      "icon": "IoGrid"
     },
     {
       "label": "Utilities",
@@ -57,7 +57,7 @@
       "fieldType": "dropdown",
       "required": true,
       "options": ["Owner", "Tenant", "Shared"],
-      "icon": "BiPinAngleFill"
+      "icon": "FaTools"
     },
     {
       "label": "Animal",
@@ -65,28 +65,28 @@
       "fieldType": "dropdown",
       "required": true,
       "options": ["Allowed", "Not allowed"],
-      "icon": "BiHeartFill"
+      "icon": "GiSittingDog"
     },
     {
       "label": "Latitude",
       "name": "latitude",
       "fieldType": "number",
       "required": true,
-      "icon": "BiCrosshair"
+      "icon": "MdLocationSearching"
     },
     {
       "label": "Longitude",
       "name": "longitude",
       "fieldType": "number",
       "required": true,
-      "icon": "BiCrosshair2"
+      "icon": "FaLocationCrosshairs"
     },
     {
       "label": "Property Description",
       "name": "propertyDescription",
       "fieldType": "textarea",
       "required": true,
-      "icon": "BiFileEarmarkFontFill"
+      "icon": "FaFileAlt"
     }
   ]
 }
