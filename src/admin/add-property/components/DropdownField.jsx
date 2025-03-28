@@ -12,7 +12,7 @@ const DropdownField = ({ item }) => {
     <div>
       <Select required={item.required}>
         <SelectTrigger className="w-full">
-          <SelectValue placeholder="Theme" />
+          <SelectValue placeholder={item.label} />
         </SelectTrigger>
         <SelectContent>
           {item?.options?.map((option, index) => (
