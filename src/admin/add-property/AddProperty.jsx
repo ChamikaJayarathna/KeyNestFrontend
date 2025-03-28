@@ -10,6 +10,7 @@ import AuthContext from "@/context/AuthContext";
 import apiRequest from "@/lib/apiRequest";
 import toast, { Toaster } from "react-hot-toast";
 import { Separator } from "@/components/ui/separator";
+import UploadImages from "./components/UploadImages";
 
 const AddProperty = () => {
   const [formData, setFormData] = useState({});
@@ -89,6 +90,9 @@ const AddProperty = () => {
             </div>
 
             <Separator className="my-6" />
+
+            {/* Property Images */}
+            <UploadImages/>
 
             <div className="mt-10 flex justify-end">
               <Button type="submit" className="bg-red-500 hover:bg-red-600">
