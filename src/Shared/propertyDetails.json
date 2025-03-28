@@ -2,7 +2,7 @@
   "propertyDetails": [
     {
       "label": "Property Title",
-      "name": "propertyTitle",
+      "name": "title",
       "fieldType": "text",
       "required": true,
       "icon": "FaClipboardList"
@@ -16,7 +16,7 @@
     },
     {
       "label": "Selling Price",
-      "name": "sellingPrice",
+      "name": "price",
       "fieldType": "text",
       "required": true,
       "icon": "FaMoneyBill"
@@ -44,7 +44,7 @@
     },
     {
       "label": "Property Type",
-      "name": "propertyType",
+      "name": "property",
       "fieldType": "dropdown",
       "required": true,
       "options": ["Apartment", "House", "Land"],
@@ -52,7 +52,7 @@
     },
     {
       "label": "Category",
-      "name": "category",
+      "name": "type",
       "fieldType": "dropdown",
       "required": true,
       "options": ["Rent", "Buy"],
@@ -68,7 +68,7 @@
     },
     {
       "label": "Animal",
-      "name": "animal",
+      "name": "pet",
       "fieldType": "dropdown",
       "required": true,
       "options": ["Allowed", "Not allowed"],
@@ -90,7 +90,7 @@
     },
     {
       "label": "Property Description",
-      "name": "propertyDescription",
+      "name": "description",
       "fieldType": "textarea",
       "required": true,
       "icon": "FaFileAlt"
