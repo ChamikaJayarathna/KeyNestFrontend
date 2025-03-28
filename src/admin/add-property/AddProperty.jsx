@@ -5,6 +5,7 @@ import DropdownField from "./components/DropdownField";
 import TextAreaField from "./components/TextAreaField";
 import { Button } from "@/components/ui/button";
 import IconField from "./components/IconField";
+import Header from "../admin-components/Header";
 
 const AddProperty = () => {
   const [formData, setFormData] = useState({});
@@ -20,6 +21,7 @@ const AddProperty = () => {
 
   return (
     <div>
+      <Header title={"Add Property"}/>
       <div className="px-10 md:px-20 my-10">
         <h2 className="font-bold text-4xl">Add New Property</h2>
         <form className="p-10 border rounded-xl mt-10" onSubmit={handleSubmit}>
