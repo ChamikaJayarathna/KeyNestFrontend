@@ -1,8 +1,10 @@
 import React from 'react';
 
-const PropertyItem = () => {
+const PropertyItem = ({property}) => {
   return (
-    <div>PropertyItem</div>
+    <div className='rounded-xl bg-white border hover:shadow-md cursor-pointer'>
+
+    </div>
   );
 }
 
