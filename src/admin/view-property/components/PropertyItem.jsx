@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { FaEdit, FaEye, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { FaBuilding } from "react-icons/fa";
 
 const PropertyItem = ({ property }) => {
   return (
@@ -19,11 +20,27 @@ const PropertyItem = ({ property }) => {
 
       <div className="p-4">
         <h2 className="font-bold text-black text-lg mb-2">{property?.title}</h2>
+        <Separator />
+        <div className="grid md:grid-cols-3 mt-5 text-black">
+          <div className="flex flex-col items-center">
+            <FaBuilding className="text-lg mb-2" />
+            <h2>{property?.property}</h2>
+          </div>
+          <div className="flex flex-col items-center">
+            <FaBuilding className="text-lg mb-2" />
+            <h2>{property?.property}</h2>
+          </div>
+          <div className="flex flex-col items-center">
+            <FaBuilding className="text-lg mb-2" />
+            <h2>{property?.property}</h2>
+          </div>
+        </div>
         <Separator className="my-2" />
         <div className="flex items-center justify-between text-black">
           <h2 className="font-bold text-xl">LKR {property?.price}</h2>
         </div>
       </div>
+
       <Separator />
 
       <div className="p-3 flex justify-evenly gap-8">
