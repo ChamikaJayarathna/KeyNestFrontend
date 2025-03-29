@@ -16,16 +16,16 @@ const PropertyCard = ({ property }) => {
       <div className="flex gap-3 items-center p-3">
         <span
           className={`text-sm font-semibold px-3 py-1 border flex items-center ${
-            property?.type === "rent"
+            property?.type === "Rent"
               ? "bg-yellow-100 text-yellow-500"
-              : property?.type === "buy"
+              : property?.type === "Buy"
               ? "bg-green-100 text-green-600"
               : "bg-gray-100 text-gray-600"
           }`}
         >
-          {property?.type === "rent"
+          {property?.type === "Rent"
             ? "For Rent"
-            : property?.type === "buy"
+            : property?.type === "Buy"
             ? "Buy"
             : ""}
         </span>
