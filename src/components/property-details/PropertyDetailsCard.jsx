@@ -6,6 +6,7 @@ import Specification from "./components/Specification";
 import Description from "./components/Description";
 import apiRequest from "@/lib/apiRequest";
 import Map from "./components/Map";
+import Header from "../Header";
 
 const PropertyDetailsCard = () => {
   const [propertyDetails, setPropertyDetails] = useState();
@@ -28,7 +29,8 @@ const PropertyDetailsCard = () => {
 
   return (
     <div>
-      <div className="p-10 md:px-20">
+      <Header/>
+      <div className="p-5 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-10 gap-5">
           <div className="">
             <ImageGallery propertyDetails={propertyDetails} />
