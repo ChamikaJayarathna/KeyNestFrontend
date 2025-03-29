@@ -34,7 +34,7 @@ const PropertyItem = ({ property }) => {
           </div>
           <div className="flex flex-col items-center">
             <TbBathFilled className="text-xl mb-2" />
-            <h2>{property?.bathroom || 0}</h2>
+            <h2>0{property?.bathroom || 0}</h2>
           </div>
         </div>
         <Separator className="my-2" />
