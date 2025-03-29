@@ -41,6 +41,7 @@ const AddProperty = () => {
 
   const GetPropertyDetails = async () => {
     try {
+      setLoader(true);
       const response = await apiRequest.get(
         `/property/get-single-property/${recordId}`
       );
@@ -49,6 +50,8 @@ const AddProperty = () => {
       setPropertyInfo(data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoader(false);
     }
   };
 
@@ -82,10 +85,21 @@ const AddProperty = () => {
         images: [...existingImageUrls, ...uploadedImageUrls],
       };
 
-      await apiRequest.post("/property/create-property", dataToSend, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      toast.success("New property added successfully 👍");
+      if (mode === "edit") {
+        await apiRequest.put(
+          `/property/update-property/${recordId}`,
+          dataToSend,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+        toast.success("Property updated successfully 👍");
+      } else {
+        await apiRequest.post("/property/create-property", dataToSend, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        toast.success("New property added successfully 👍");
+      }
     } catch (error) {
       console.log(error);
     } finally {
@@ -99,7 +113,9 @@ const AddProperty = () => {
       <div>
         <Header title={mode === "edit" ? "Edit Property" : "Add Property"} />
         <div className="px-10 md:px-20 my-10">
-          <h2 className="font-bold text-4xl">{mode === "edit" ? "Edit Property" : "Add New Property"}</h2>
+          <h2 className="font-bold text-4xl">
+            {mode === "edit" ? "Edit Property" : "Add New Property"}
+          </h2>
           <form
             className="p-10 border rounded-xl mt-10"
             onSubmit={handleSubmit}
