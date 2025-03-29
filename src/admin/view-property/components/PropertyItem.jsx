@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { FaEdit, FaEye, FaTrashAlt } from "react-icons/fa";
+import { FaEdit, FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaBuilding } from "react-icons/fa";
 import { BiSolidBed } from "react-icons/bi";
 import { TbBathFilled } from "react-icons/tb";
+import DeleteField from "./DeleteField";
+import AuthContext from "@/context/AuthContext";
+import apiRequest from "@/lib/apiRequest";
 
-const PropertyItem = ({ property }) => {
+const PropertyItem = ({ property, onDeleteSuccess }) => {
+  const { token } = useContext(AuthContext);
+
+  const handleDelete = async () => {
+    try {
+      await apiRequest.delete(`/property/delete-property/${property._id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      onDeleteSuccess(property._id);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="max-w-[350px] rounded-xl bg-white border hover:shadow-md cursor-pointer">
       <h2 className="absolute m-2 bg-green-500 px-2 rounded-full text-sm text-white">
@@ -51,16 +67,17 @@ const PropertyItem = ({ property }) => {
             <FaEye />
           </Button>
         </Link>
-        <Link to={`/admin/add-property?mode=edit&id=${property._id}`} className="w-full">
+        <Link
+          to={`/admin/add-property?mode=edit&id=${property._id}`}
+          className="w-full"
+        >
           <Button className="w-full bg-yellow-400 hover:bg-yellow-500">
             <FaEdit />
           </Button>
         </Link>
-        <Link className="w-full">
-          <Button className="w-full bg-red-400 hover:bg-red-500">
-            <FaTrashAlt />
-          </Button>
-        </Link>
+        <div className="w-full">
+          <DeleteField handleDelete={handleDelete} />
+        </div>
       </div>
     </div>
   );
