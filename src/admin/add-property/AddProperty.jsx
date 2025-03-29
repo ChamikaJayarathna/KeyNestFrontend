@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import propertyDetails from "../../Shared/propertyDetails.json";
 import InputField from "./components/InputField";
 import DropdownField from "./components/DropdownField";
@@ -12,6 +12,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Separator } from "@/components/ui/separator";
 import UploadImages from "./components/UploadImages";
 import { BiLoaderAlt } from "react-icons/bi";
+import { useSearchParams } from "react-router-dom";
 
 const AddProperty = () => {
   const [formData, setFormData] = useState({});
@@ -19,8 +20,37 @@ const AddProperty = () => {
   const [uploadedImageUrls, setUploadedImageUrls] = useState([]);
   const [existingImageUrls, setExistingImageUrls] = useState([]);
   const [loader, setLoader] = useState(false);
+  const [searchParams] = useSearchParams();
 
   const { token } = useContext(AuthContext);
+
+  const mode = searchParams.get("mode");
+  const recordId = searchParams.get("id");
+
+  useEffect(() => {
+    if (mode === "edit" && recordId) {
+      GetPropertyDetails();
+    }
+  }, [mode, recordId]);
+
+  useEffect(() => {
+    if (mode === "edit" && propertyInfo?.images?.length) {
+      setExistingImageUrls(propertyInfo.images);
+    }
+  }, [propertyInfo, mode]);
+
+  const GetPropertyDetails = async () => {
+    try {
+      const response = await apiRequest.get(
+        `/property/get-single-property/${recordId}`
+      );
+      const data = response.data;
+      console.log(data);
+      setPropertyInfo(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleInputChange = (name, value) => {
     setFormData((prevData) => ({
@@ -67,9 +97,9 @@ const AddProperty = () => {
     <>
       <Toaster />
       <div>
-        <Header title={"Add Property"} />
+        <Header title={mode === "edit" ? "Edit Property" : "Add Property"} />
         <div className="px-10 md:px-20 my-10">
-          <h2 className="font-bold text-4xl">Add New Property</h2>
+          <h2 className="font-bold text-4xl">{mode === "edit" ? "Edit Property" : "Add New Property"}</h2>
           <form
             className="p-10 border rounded-xl mt-10"
             onSubmit={handleSubmit}

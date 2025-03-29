@@ -51,7 +51,7 @@ const PropertyItem = ({ property }) => {
             <FaEye />
           </Button>
         </Link>
-        <Link className="w-full">
+        <Link to={`/admin/add-property?mode=edit&id=${property._id}`} className="w-full">
           <Button className="w-full bg-yellow-400 hover:bg-yellow-500">
             <FaEdit />
           </Button>
