@@ -1,5 +1,8 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import { FaEdit, FaEye, FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const PropertyItem = ({ property }) => {
   return (
@@ -20,6 +23,25 @@ const PropertyItem = ({ property }) => {
         <div className="flex items-center justify-between text-black">
           <h2 className="font-bold text-xl">LKR {property?.price}</h2>
         </div>
+      </div>
+      <Separator />
+
+      <div className="p-3 flex justify-evenly gap-8">
+        <Link className="w-full">
+          <Button className="bg-green-700 hover:bg-green-600 w-full">
+            <FaEye />
+          </Button>
+        </Link>
+        <Link className="w-full">
+          <Button className="w-full bg-yellow-400 hover:bg-yellow-500">
+            <FaEdit />
+          </Button>
+        </Link>
+        <Link className="w-full">
+          <Button className="w-full bg-red-400 hover:bg-red-500">
+            <FaTrashAlt />
+          </Button>
+        </Link>
       </div>
     </div>
   );
