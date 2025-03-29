@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button";
 import { FaEdit, FaEye, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaBuilding } from "react-icons/fa";
+import { BiSolidBed } from "react-icons/bi";
+import { TbBathFilled } from "react-icons/tb";
 
 const PropertyItem = ({ property }) => {
   return (
-    <div className="rounded-xl bg-white border hover:shadow-md cursor-pointer">
+    <div className="max-w-[350px] rounded-xl bg-white border hover:shadow-md cursor-pointer">
       <h2 className="absolute m-2 bg-green-500 px-2 rounded-full text-sm text-white">
         {property?.type}
       </h2>
@@ -27,12 +29,12 @@ const PropertyItem = ({ property }) => {
             <h2>{property?.property}</h2>
           </div>
           <div className="flex flex-col items-center">
-            <FaBuilding className="text-lg mb-2" />
-            <h2>{property?.property}</h2>
+            <BiSolidBed className="text-xl mb-2" />
+            <h2>0{property?.bedroom || 0}</h2>
           </div>
           <div className="flex flex-col items-center">
-            <FaBuilding className="text-lg mb-2" />
-            <h2>{property?.property}</h2>
+            <TbBathFilled className="text-xl mb-2" />
+            <h2>{property?.bathroom || 0}</h2>
           </div>
         </div>
         <Separator className="my-2" />
