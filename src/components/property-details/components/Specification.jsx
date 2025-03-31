@@ -2,8 +2,8 @@ import React from "react";
 
 const Specification = ({ propertyDetails }) => {
   return (
-    <div>
-      <h2 className="my-2 font-medium text-2xl">Specification</h2>
+    <div className="p-10 rounded-xl border shadow-md mt-7">
+      <h2 className="font-medium text-2xl text-primary">Specification</h2>
       <div>
         <div className="property-feature-row">
           <span className="property-feature-label">Address:</span>
