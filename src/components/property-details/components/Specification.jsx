@@ -5,7 +5,7 @@ import IconField from "@/admin/add-property/components/IconField";
 const Specification = ({ propertyDetails }) => {
   return (
     <div className="p-10 rounded-xl border shadow-md mt-7">
-      <h2 className="font-medium text-2xl text-primary mb-5">Specification</h2>
+      <h2 className="font-medium text-3xl text-primary mb-5">Specification</h2>
       {propertyDetails && Array.isArray(PropertySpecification) ? (
         PropertySpecification.map((item, index) => (
           <div key={index} className="flex gap-2 items-center mb-3">
