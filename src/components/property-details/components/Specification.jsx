@@ -1,53 +1,22 @@
 import React from "react";
+import PropertySpecification from "@/Shared/PropertySpecification";
+import IconField from "@/admin/add-property/components/IconField";
 
 const Specification = ({ propertyDetails }) => {
   return (
     <div className="p-10 rounded-xl border shadow-md mt-7">
-      <h2 className="font-medium text-2xl text-primary">Specification</h2>
-      <div>
-        <div className="property-feature-row">
-          <span className="property-feature-label">Address:</span>
-          <span className="property-feature-value">
-            {propertyDetails?.address}
-          </span>
-        </div>
-        <div className="property-feature-row">
-          <span className="property-feature-label">City:</span>
-          <span className="property-feature-value">
-            {propertyDetails?.city}
-          </span>
-        </div>
-        <div className="property-feature-row">
-          <span className="property-feature-label">Type:</span>
-          <span className="property-feature-value">
-            {propertyDetails?.type}
-          </span>
-        </div>
-        <div className="property-feature-row">
-          <span className="property-feature-label">Property:</span>
-          <span className="property-feature-value">
-            {propertyDetails?.property}
-          </span>
-        </div>
-        <div className="property-feature-row">
-          <span className="property-feature-label">Utilities:</span>
-          <span className="property-feature-value">
-            {propertyDetails?.utilities}
-          </span>
-        </div>
-        <div className="property-feature-row">
-          <span className="property-feature-label">Bedrooms: </span>
-          <span className="property-feature-value">
-            0{propertyDetails?.bedroom}
-          </span>
-        </div>
-        <div className="property-feature-row">
-          <span className="property-feature-label">Bathroom: </span>
-          <span className="property-feature-value">
-            0{propertyDetails?.bathroom}
-          </span>
-        </div>
-      </div>
+      <h2 className="font-medium text-2xl text-primary mb-5">Specification</h2>
+      {propertyDetails && Array.isArray(PropertySpecification) ? (
+        PropertySpecification.map((item, index) => (
+          <div key={index} className="flex gap-2 items-center mb-3">
+            <IconField icon={item?.icon} />
+            <span>{item?.label}:</span>
+            <span>{propertyDetails?.[item?.name]}</span>
+          </div>
+        ))
+      ) : (
+        <div className="w-full h-[500px] rounded-xl bg-slate-200 animate-pulse"></div>
+      )}
     </div>
   );
 };
