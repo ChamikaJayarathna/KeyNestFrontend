@@ -36,9 +36,15 @@ const Specification = ({ propertyDetails }) => {
           </span>
         </div>
         <div className="property-feature-row">
-          <span className="property-feature-label">Bedrooms:</span>
+          <span className="property-feature-label">Bedrooms: </span>
           <span className="property-feature-value">
-            {propertyDetails?.bedroom}
+            0{propertyDetails?.bedroom}
+          </span>
+        </div>
+        <div className="property-feature-row">
+          <span className="property-feature-label">Bathroom: </span>
+          <span className="property-feature-value">
+            0{propertyDetails?.bathroom}
           </span>
         </div>
       </div>
