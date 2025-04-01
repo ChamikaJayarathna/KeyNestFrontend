@@ -37,8 +37,8 @@ const PropertyDetailsCard = () => {
           </div>
           <div className="">
             <PropertyTitle propertyDetails={propertyDetails} />
-            <Specification propertyDetails={propertyDetails} />
             <Description propertyDetails={propertyDetails} />
+            <Specification propertyDetails={propertyDetails} />
             <Map />
           </div>
         </div>
