@@ -29,7 +29,7 @@ const PropertyDetailsCard = () => {
 
   return (
     <div>
-      <Header/>
+      <Header />
       <div className="p-5 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full mt-10 gap-5">
           <div className="">
@@ -39,7 +39,13 @@ const PropertyDetailsCard = () => {
             <PropertyTitle propertyDetails={propertyDetails} />
             <Description propertyDetails={propertyDetails} />
             <Specification propertyDetails={propertyDetails} />
-            <Map />
+            {propertyDetails &&
+            propertyDetails.latitude &&
+            propertyDetails.longitude ? (
+              <Map propertyDetails={propertyDetails} />
+            ) : (
+              <p>Loading Map...</p>
+            )}
           </div>
         </div>
       </div>
