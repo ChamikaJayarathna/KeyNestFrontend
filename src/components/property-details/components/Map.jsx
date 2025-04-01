@@ -1,6 +1,7 @@
 import React from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import Pin from "./Pin";
 
 const Map = ({ propertyDetails }) => {
   return (
@@ -16,6 +17,7 @@ const Map = ({ propertyDetails }) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
+        <Pin item={propertyDetails} />
       </MapContainer>
     </div>
   );
