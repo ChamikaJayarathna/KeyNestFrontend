@@ -16,6 +16,7 @@ import { useSearchParams } from "react-router-dom";
 
 const AddProperty = () => {
   const [formData, setFormData] = useState({});
+  const [formKey, setFormKey] = useState(Date.now());
   const [propertyInfo, setPropertyInfo] = useState();
   const [uploadedImageUrls, setUploadedImageUrls] = useState([]);
   const [existingImageUrls, setExistingImageUrls] = useState([]);
@@ -94,11 +95,24 @@ const AddProperty = () => {
           }
         );
         toast.success("Property updated successfully 👍");
+
+        setFormData({});
+        setPropertyInfo(null);
+        setUploadedImageUrls([]);
+        setExistingImageUrls([]);
+        setFormKey(Date.now());
+
       } else {
         await apiRequest.post("/property/create-property", dataToSend, {
           headers: { Authorization: `Bearer ${token}` },
         });
         toast.success("New property added successfully 👍");
+
+        setFormData({});
+        setUploadedImageUrls([]);
+        setExistingImageUrls([]);
+        setFormKey(Date.now());
+
       }
     } catch (error) {
       console.log(error);
@@ -119,6 +133,7 @@ const AddProperty = () => {
           <form
             className="p-10 border rounded-xl mt-10"
             onSubmit={handleSubmit}
+            key={formKey}
           >
             {/* Property Details */}
             <div>
