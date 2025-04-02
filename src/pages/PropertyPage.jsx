@@ -7,15 +7,13 @@ const PropertyPage = () => {
   return (
     <>
       <Header/>
-      <div className="flex h-[calc(100vh-60px)] pt-[80px]">
-        <div className="w-1/4 h-full p-4 overflow-auto mt-5 no-scrollbar">
+      <div className="flex">
+        <div className="">
           <SidebarFilter />
         </div>
 
-        <div className="flex-1 h-full overflow-auto p-4">
-          <div className="">
+        <div className="flex-1 p-4">
             <PropertyList />
-          </div>
         </div>
       </div>
     </>
