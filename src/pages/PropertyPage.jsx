@@ -1,5 +1,5 @@
 import React from "react";
-import SidebarFilter from "../components/SidebarFilter";
+import SidebarFilter from "../components/sidebar-filter/SidebarFilter";
 import PropertyList from "../components/PropertyList";
 import Header from "@/components/Header";
 
