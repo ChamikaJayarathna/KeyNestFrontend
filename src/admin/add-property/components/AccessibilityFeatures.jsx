@@ -9,9 +9,9 @@ const AccessibilityFeatures = ({ filter, handleFilterChange, filterData }) => {
         {filter.accessibilityFeatures.map((item, index) => (
           <div key={index} className="flex gap-2 items-center">
             <Checkbox
-              checked={!!filterData[item.name]}
+              checked={!!filterData.accessibilityFeatures?.[item.name]}
               onCheckedChange={(checked) =>
-                handleFilterChange(item.name, checked)
+                handleFilterChange("accessibilityFeatures", item.name, checked)
               }
             />
             <h2>{item.label}</h2>

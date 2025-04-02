@@ -9,9 +9,9 @@ const ClimateFeatures = ({ filter, handleFilterChange, filterData }) => {
         {filter.climateFeatures.map((item, index) => (
           <div key={index} className="flex gap-2 items-center">
             <Checkbox
-              checked={!!filterData[item.name]}
+              checked={!!filterData.climateFeatures?.[item.name]}
               onCheckedChange={(checked) =>
-                handleFilterChange(item.name, checked)
+                handleFilterChange("climateFeatures", item.name, checked)
               }
             />
             <h2>{item.label}</h2>

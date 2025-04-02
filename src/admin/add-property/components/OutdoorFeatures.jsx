@@ -1,5 +1,5 @@
-import React from 'react';
-import { Checkbox } from '@/components/ui/checkbox';
+import React from "react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const OutdoorFeatures = ({ filter, handleFilterChange, filterData }) => {
   return (
@@ -9,9 +9,9 @@ const OutdoorFeatures = ({ filter, handleFilterChange, filterData }) => {
         {filter.outdoorFeatures.map((item, index) => (
           <div key={index} className="flex gap-2 items-center">
             <Checkbox
-              checked={!!filterData[item.name]}
+              checked={!!filterData.outdoorFeatures?.[item.name]}
               onCheckedChange={(checked) =>
-                handleFilterChange(item.name, checked)
+                handleFilterChange("outdoorFeatures", item.name, checked)
               }
             />
             <h2>{item.label}</h2>
@@ -20,6 +20,6 @@ const OutdoorFeatures = ({ filter, handleFilterChange, filterData }) => {
       </div>
     </div>
   );
-}
+};
 
 export default OutdoorFeatures;

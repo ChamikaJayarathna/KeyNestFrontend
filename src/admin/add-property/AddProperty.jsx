@@ -53,8 +53,8 @@ const AddProperty = () => {
         `/property/get-single-property/${recordId}`
       );
       const data = response.data;
-      console.log(data);
       setPropertyInfo(data);
+      setFilterData(data.filter);
     } catch (error) {
       console.log(error);
     } finally {
@@ -83,12 +83,15 @@ const AddProperty = () => {
     );
   };
 
-  const handleFilterChange = (name, isChecked) => {
+  const handleFilterChange = (category, name, isChecked) => {
     setFilterData((prevData) => ({
       ...prevData,
-      [name]: isChecked,
+      [category]: {
+        ...prevData[category],
+        [name]: isChecked
+      }
     }));
-  };
+  };  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -96,6 +99,7 @@ const AddProperty = () => {
     try {
       const dataToSend = {
         ...formData,
+        filter: filterData,
         images: [...existingImageUrls, ...uploadedImageUrls],
       };
 
@@ -111,6 +115,7 @@ const AddProperty = () => {
 
         setFormData({});
         setPropertyInfo(null);
+        setFilterData({});
         setUploadedImageUrls([]);
         setExistingImageUrls([]);
         setFormKey(Date.now());
@@ -121,6 +126,7 @@ const AddProperty = () => {
         toast.success("New property added successfully 👍");
 
         setFormData({});
+        setFilterData({});
         setUploadedImageUrls([]);
         setExistingImageUrls([]);
         setFormKey(Date.now());
