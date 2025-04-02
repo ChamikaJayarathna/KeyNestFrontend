@@ -32,7 +32,7 @@ const ViewProperty = () => {
   return (
     <div>
       <Header title={"View Property"} />
-      <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-7 gap-8">
+      <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-7">
         {propertyDetails.map((item, index) => (
           <div key={index}>
             <PropertyItem
