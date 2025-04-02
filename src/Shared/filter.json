@@ -50,5 +50,53 @@
       "name": "rural",
       "fieldType": "checkbox"
     }
+  ],
+
+  "outdoorFeatures": [
+    {
+      "label": "Swimming pool",
+      "name": "swimmingPool",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Balcony",
+      "name": "balcony",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Garage",
+      "name": "garage",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Shed",
+      "name": "shed",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Fully fenced",
+      "name": "fullyFenced",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Undercover parking",
+      "name": "undercoverParking",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Outdoor spa",
+      "name": "outdoorSpa",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Tennis court",
+      "name": "tennisCourt",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Outdoor area",
+      "name": "outdoorArea",
+      "fieldType": "checkbox"
+    }
   ]
 }
