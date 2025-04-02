@@ -1,4 +1,5 @@
 import React from "react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const OutdoorFeatures = ({ filter, handleFilterChange, filterData }) => {
   return (
