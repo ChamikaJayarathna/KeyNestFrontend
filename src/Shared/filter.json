@@ -1,0 +1,54 @@
+{
+  "propertyTypes": [
+    {
+      "label": "All",
+      "name": "all",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "House",
+      "name": "house",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Townhouse",
+      "name": "townhouse",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Apartment & Unit",
+      "name": "apartmentUnit",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Villa",
+      "name": "villa",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Retirement Living",
+      "name": "retirementLiving",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Land",
+      "name": "land",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Acreage",
+      "name": "acreage",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Rural",
+      "name": "rural",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Rural",
+      "name": "rural",
+      "fieldType": "checkbox"
+    }
+  ]
+}
