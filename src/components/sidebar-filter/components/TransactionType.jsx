@@ -11,9 +11,9 @@ const TransactionType = ({ filter, handleFilterChange, filterData }) => {
         {filter.transactionType.map((item, index) => (
           <div key={index} className="flex gap-2 items-center">
             <Checkbox
-              checked={!!filterData[item.name]}
+              checked={!!filterData.transactionType?.[item.name]}
               onCheckedChange={(checked) =>
-                handleFilterChange(item.name, checked)
+                handleFilterChange("transactionType", item.name, checked)
               }
             />
             <h2>{item.label}</h2>

@@ -11,9 +11,9 @@ const PropertyTypes = ({ filter, handleFilterChange, filterData }) => {
         {filter.propertyTypes.map((item, index) => (
           <div key={index} className="flex gap-2 items-center">
             <Checkbox
-              checked={!!filterData[item.name]}
+              checked={!!filterData.propertyTypes?.[item.name]}
               onCheckedChange={(checked) =>
-                handleFilterChange(item.name, checked)
+                handleFilterChange("propertyTypes", item.name, checked)
               }
             />
             <h2>{item.label}</h2>

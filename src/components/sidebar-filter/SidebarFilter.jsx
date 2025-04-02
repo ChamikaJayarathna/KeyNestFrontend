@@ -13,10 +13,13 @@ import TransactionType from "./components/TransactionType";
 const SidebarFilter = () => {
   const [filterData, setFilterData] = useState({});
 
-  const handleFilterChange = (name, isChecked) => {
+  const handleFilterChange = (category, name, isChecked) => {
     setFilterData((prevData) => ({
       ...prevData,
-      [name]: isChecked,
+      [category]: {
+        ...prevData[category],
+        [name]: isChecked,
+      },
     }));
   };
 
