@@ -98,5 +98,91 @@
       "name": "outdoorArea",
       "fieldType": "checkbox"
     }
+  ],
+
+  "indoorFeatures": [
+    {
+      "label": "Outdoor area",
+      "name": "outdoorArea",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Dishwasher",
+      "name": "dishwasher",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Built in robes",
+      "name": "builtInRobes",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Broadband",
+      "name": "broadband",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Floorboards",
+      "name": "floorboards",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Floorboards",
+      "name": "floorboards",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Study",
+      "name": "study",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Workshop",
+      "name": "workshop",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Alarm system",
+      "name": "alarmSystem",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Gym",
+      "name": "gym",
+      "fieldType": "checkbox"
+    }
+  ],
+
+  "climateFeatures": [
+    {
+      "label": "Heating",
+      "name": "heating",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Solar panels",
+      "name": "solarPanels",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Fireplace",
+      "name": "fireplace",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Water tank",
+      "name": "waterTank",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Air conditioning",
+      "name": "airConditioning",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Solar hot water",
+      "name": "solarHotWater",
+      "fieldType": "checkbox"
+    }
   ]
 }
