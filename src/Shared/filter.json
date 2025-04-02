@@ -184,5 +184,42 @@
       "name": "solarHotWater",
       "fieldType": "checkbox"
     }
+  ],
+  "accessibilityFeatures": [
+    {
+      "label": "Single storey",
+      "name": "singleStorey",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Step free entry",
+      "name": "stepFreeEntry",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Wide doorways",
+      "name": "wideDoorways",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Roll in shower",
+      "name": "rollInShower",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Elevator",
+      "name": "elevator",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Bathroom grab rails",
+      "name": "bathroomGrabRails",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Accessible parking",
+      "name": "accessibleParking",
+      "fieldType": "checkbox"
+    }
   ]
 }
