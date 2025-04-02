@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import filter from "../../Shared/filter.json";
 import { Checkbox } from "../ui/checkbox";
+import PropertyTypes from "./components/PropertyTypes";
 
 const SidebarFilter = () => {
 
@@ -48,19 +49,8 @@ const SidebarFilter = () => {
 
   return (
     <div className="p-6 space-y-6 border-r-3 h-screen overflow-y-auto sticky top-0 no-scrollbar">
-      <div>
-        <h2 className="text-custom-teal-blue text-base font-bold mb-3">
-          Property Type
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-          {filter.propertyTypes.map((item, index) => (
-            <div key={index} className="flex gap-2 items-center">
-              <Checkbox checked={!!filterData[item.name]} onCheckedChange={(checked)=> handleFilterChange(item.name, checked)}/>
-              <h2>{item.label}</h2>
-            </div>
-          ))}
-        </div>
-      </div>
+
+      <PropertyTypes filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
 
       <div>
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
