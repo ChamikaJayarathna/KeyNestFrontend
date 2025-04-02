@@ -48,21 +48,6 @@ const SidebarFilter = () => {
 
       <Condition filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
       <SaleMethod filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
-
-      {/* <div>
-        <h2 className="text-custom-teal-blue text-base font-bold mb-2">
-          Sale method
-        </h2>
-        <div className="flex flex-wrap gap-4">
-          {["All", "Auction", "Private treat sale"].map((method) => (
-            <label key={method} className="flex items-center gap-2">
-              <input type="checkbox" className="w-4 h-4 accent-black" />
-              <span className="text-sm">{method}</span>
-            </label>
-          ))}
-        </div>
-      </div> */}
-
       <OutdoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
       <IndoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
       <ClimateFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
