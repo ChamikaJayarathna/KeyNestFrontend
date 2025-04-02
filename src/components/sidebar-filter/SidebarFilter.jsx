@@ -15,19 +15,6 @@ const SidebarFilter = () => {
     }));
   };
 
-  const indoorFeatures = [
-    "Ensuite",
-    "Dishwasher",
-    "Built in robes",
-    "Broadband",
-    "Floorboards",
-    "Study",
-    "Workshop",
-    "Alarm system",
-    "Gym",
-    "Rumpus room",
-  ];
-
   const climateFeatures = [
     "Heating",
     "Solar panels",
@@ -155,20 +142,6 @@ const SidebarFilter = () => {
 
       <OutdoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
       <IndoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
-
-      {/* <div>
-        <h2 className="text-custom-teal-blue text-base font-bold mb-2">
-          Indoor features
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-          {indoorFeatures.map((feature) => (
-            <label key={feature} className="flex items-center gap-2">
-              <input type="checkbox" className="w-4 h-4 accent-black" />
-              <span className="text-sm">{feature}</span>
-            </label>
-          ))}
-        </div>
-      </div> */}
 
       <div>
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
