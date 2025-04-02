@@ -13,6 +13,8 @@ import { Separator } from "@/components/ui/separator";
 import UploadImages from "./components/UploadImages";
 import { BiLoaderAlt } from "react-icons/bi";
 import { useSearchParams } from "react-router-dom";
+import filter from "../../Shared/filter.json";
+import OutdoorFeatures from "./components/OutdoorFeatures";
 
 const AddProperty = () => {
   const [formData, setFormData] = useState({});
@@ -20,6 +22,7 @@ const AddProperty = () => {
   const [propertyInfo, setPropertyInfo] = useState();
   const [uploadedImageUrls, setUploadedImageUrls] = useState([]);
   const [existingImageUrls, setExistingImageUrls] = useState([]);
+  const [filterData, setFilterData] = useState({});
   const [loader, setLoader] = useState(false);
   const [searchParams] = useSearchParams();
 
@@ -77,6 +80,13 @@ const AddProperty = () => {
     );
   };
 
+  const handleFilterChange = (name, isChecked) => {
+    setFilterData((prevData) => ({
+      ...prevData,
+      [name]: isChecked,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoader(true);
@@ -101,7 +111,6 @@ const AddProperty = () => {
         setUploadedImageUrls([]);
         setExistingImageUrls([]);
         setFormKey(Date.now());
-
       } else {
         await apiRequest.post("/property/create-property", dataToSend, {
           headers: { Authorization: `Bearer ${token}` },
@@ -112,7 +121,6 @@ const AddProperty = () => {
         setUploadedImageUrls([]);
         setExistingImageUrls([]);
         setFormKey(Date.now());
-
       }
     } catch (error) {
       console.log(error);
@@ -183,7 +191,12 @@ const AddProperty = () => {
 
             <Separator className="my-6" />
             {/* Specification */}
-
+            <OutdoorFeatures
+              filter={filter}
+              handleFilterChange={handleFilterChange}
+              filterData={filterData}
+            />
+            
             <Separator className="my-6" />
 
             {/* Property Images */}
