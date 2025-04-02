@@ -1,4 +1,5 @@
 import React from "react";
+import filter from "../../Shared/filter.json";
 
 const SidebarFilter = () => {
   const propertyTypes = [
