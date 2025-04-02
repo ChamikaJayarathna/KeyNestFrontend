@@ -1,5 +1,5 @@
-import React from 'react';
-import { Checkbox } from '@/components/ui/checkbox';
+import React from "react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const SaleMethod = ({ filter, handleFilterChange, filterData }) => {
   return (
@@ -22,6 +22,6 @@ const SaleMethod = ({ filter, handleFilterChange, filterData }) => {
       </div>
     </div>
   );
-}
+};
 
 export default SaleMethod;
