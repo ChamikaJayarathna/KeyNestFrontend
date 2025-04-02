@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import filter from "../../Shared/filter.json";
 import PropertyTypes from "./components/PropertyTypes";
 import OutdoorFeatures from "./components/OutdoorFeatures";
+import IndoorFeatures from "./components/IndoorFeatures";
 
 const SidebarFilter = () => {
 
@@ -153,8 +154,9 @@ const SidebarFilter = () => {
       </div>
 
       <OutdoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
+      <IndoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
 
-      <div>
+      {/* <div>
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
           Indoor features
         </h2>
@@ -166,7 +168,7 @@ const SidebarFilter = () => {
             </label>
           ))}
         </div>
-      </div>
+      </div> */}
 
       <div>
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">

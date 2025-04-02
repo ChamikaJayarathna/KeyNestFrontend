@@ -122,11 +122,6 @@
       "fieldType": "checkbox"
     },
     {
-      "label": "Floorboards",
-      "name": "floorboards",
-      "fieldType": "checkbox"
-    },
-    {
       "label": "Study",
       "name": "study",
       "fieldType": "checkbox"
