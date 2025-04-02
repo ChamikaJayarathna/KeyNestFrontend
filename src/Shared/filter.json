@@ -211,5 +211,23 @@
       "name": "accessibleParking",
       "fieldType": "checkbox"
     }
+  ],
+
+  "condition": [
+    {
+      "label": "All",
+      "name": "all",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "New",
+      "name": "new",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Established",
+      "name": "established",
+      "fieldType": "checkbox"
+    }
   ]
 }
