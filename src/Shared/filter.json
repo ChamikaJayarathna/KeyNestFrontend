@@ -229,5 +229,23 @@
       "name": "established",
       "fieldType": "checkbox"
     }
+  ],
+
+  "saleMethod": [
+    {
+      "label": "All",
+      "name": "all",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Auction",
+      "name": "auction",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Private treat sale",
+      "name": "privateTreatSale",
+      "fieldType": "checkbox"
+    }
   ]
 }
