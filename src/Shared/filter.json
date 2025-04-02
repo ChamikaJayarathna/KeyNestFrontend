@@ -92,11 +92,6 @@
 
   "indoorFeatures": [
     {
-      "label": "Outdoor area",
-      "name": "outdoorArea",
-      "fieldType": "checkbox"
-    },
-    {
       "label": "Dishwasher",
       "name": "dishwasher",
       "fieldType": "checkbox"
