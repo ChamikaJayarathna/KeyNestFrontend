@@ -7,6 +7,7 @@ import ClimateFeatures from "./components/ClimateFeatures";
 import AccessibilityFeatures from "./components/AccessibilityFeatures";
 import Specification from "./components/Specification";
 import Condition from "./components/Condition";
+import SaleMethod from "./components/SaleMethod";
 
 const SidebarFilter = () => {
 
@@ -46,6 +47,7 @@ const SidebarFilter = () => {
       </div> */}
 
       <Condition filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
+      <SaleMethod filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
 
       {/* <div>
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
