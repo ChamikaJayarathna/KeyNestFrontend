@@ -3,6 +3,7 @@ import filter from "../../Shared/filter.json";
 import PropertyTypes from "./components/PropertyTypes";
 import OutdoorFeatures from "./components/OutdoorFeatures";
 import IndoorFeatures from "./components/IndoorFeatures";
+import ClimateFeatures from "./components/ClimateFeatures";
 
 const SidebarFilter = () => {
 
@@ -14,16 +15,6 @@ const SidebarFilter = () => {
       [name]: isChecked,
     }));
   };
-
-  const climateFeatures = [
-    "Heating",
-    "Solar panels",
-    "Fireplace",
-    "Water tank",
-    "Air conditioning",
-    "High energy efficiency",
-    "Solar hot water",
-  ];
 
   const accessibilityFeatures = [
     "Single storey",
@@ -142,20 +133,7 @@ const SidebarFilter = () => {
 
       <OutdoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
       <IndoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
-
-      <div>
-        <h2 className="text-custom-teal-blue text-base font-bold mb-2">
-          Climate control & energy
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-          {climateFeatures.map((feature) => (
-            <label key={feature} className="flex items-center gap-2">
-              <input type="checkbox" className="w-4 h-4 accent-black" />
-              <span className="text-sm">{feature}</span>
-            </label>
-          ))}
-        </div>
-      </div>
+      <ClimateFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
 
       <div>
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
