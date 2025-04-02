@@ -43,11 +43,17 @@
       "icon": "FaBath"
     },
     {
+      "label": "Car Spaces",
+      "name": "carSpaces",
+      "fieldType": "number",
+      "icon": "FaBath"
+    },
+    {
       "label": "Property Type",
       "name": "property",
       "fieldType": "dropdown",
       "required": true,
-      "options": ["Apartment", "House", "Land"],
+      "options": ["Apartment", "House", "Land", "Townhouse", "Villa", "Retirement Living", "Acreage", "Rural"],
       "icon": "BsBuildingsFill"
     },
     {
@@ -55,7 +61,7 @@
       "name": "type",
       "fieldType": "dropdown",
       "required": true,
-      "options": ["Rent", "Buy"],
+      "options": ["Rent", "Buy", "Sell"],
       "icon": "IoGrid"
     },
     {
@@ -64,6 +70,13 @@
       "fieldType": "dropdown",
       "required": true,
       "options": ["Owner", "Tenant", "Shared"],
+      "icon": "FaTools"
+    },
+    {
+      "label": "Condition",
+      "name": "condition",
+      "fieldType": "dropdown",
+      "options": ["New", "Established"],
       "icon": "FaTools"
     },
     {
