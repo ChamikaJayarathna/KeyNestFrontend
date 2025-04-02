@@ -3,8 +3,10 @@ import PropertyCard from "./PropertyCard";
 import apiRequest from "../lib/apiRequest";
 import SearchBox from "./SearchBox";
 
-const PropertyList = () => {
+const PropertyList = ({filterResult}) => {
   const [propertyDetails, setPropertyDetails] = useState([]);
+
+  const displayProperties = filterResult?.length ? filterResult : propertyDetails;
 
   useEffect(() => {
     GetAllProperty();
@@ -24,7 +26,7 @@ const PropertyList = () => {
       <SearchBox />
 
       <div className="px-8 grid grid-cols-1 md:grid-cols-4 gap-45">
-        {propertyDetails.map((property) => (
+        {displayProperties.map((property) => (
           <PropertyCard key={property.id} property={property} />
         ))}
       </div>

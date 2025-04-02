@@ -7,10 +7,10 @@ import ClimateFeatures from "./components/ClimateFeatures";
 import AccessibilityFeatures from "./components/AccessibilityFeatures";
 import Specification from "./components/Specification";
 import Condition from "./components/Condition";
-import { Button } from "../ui/button";
 import TransactionType from "./components/TransactionType";
+import { Button } from "../ui/button";
 
-const SidebarFilter = () => {
+const SidebarFilter = ({ filterProperty }) => {
   const [filterData, setFilterData] = useState({});
 
   const handleFilterChange = (category, name, isChecked) => {
@@ -70,7 +70,7 @@ const SidebarFilter = () => {
       />
 
       <div className="flex justify-end">
-        <Button>Apply</Button>
+        <Button onClick={() => filterProperty(filterData)}>Apply</Button>
       </div>
     </div>
   );
