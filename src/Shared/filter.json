@@ -11,8 +11,8 @@
       "fieldType": "checkbox"
     },
     {
-      "label": "Apartment & Unit",
-      "name": "apartmentUnit",
+      "label": "Apartment",
+      "name": "apartment",
       "fieldType": "checkbox"
     },
     {
@@ -217,6 +217,24 @@
     {
       "label": "Established",
       "name": "established",
+      "fieldType": "checkbox"
+    }
+  ],
+  
+  "transactionType": [
+    {
+      "label": "Rent",
+      "name": "rent",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Buy",
+      "name": "buy",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Sell",
+      "name": "sell",
       "fieldType": "checkbox"
     }
   ]
