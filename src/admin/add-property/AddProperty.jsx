@@ -182,6 +182,9 @@ const AddProperty = () => {
             </div>
 
             <Separator className="my-6" />
+            {/* Specification */}
+
+            <Separator className="my-6" />
 
             {/* Property Images */}
             <UploadImages
