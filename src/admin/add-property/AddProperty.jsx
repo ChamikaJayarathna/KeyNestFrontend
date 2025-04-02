@@ -15,6 +15,7 @@ import { BiLoaderAlt } from "react-icons/bi";
 import { useSearchParams } from "react-router-dom";
 import filter from "../../Shared/filter.json";
 import OutdoorFeatures from "./components/OutdoorFeatures";
+import IndoorFeatures from "./components/IndoorFeatures";
 
 const AddProperty = () => {
   const [formData, setFormData] = useState({});
@@ -196,7 +197,11 @@ const AddProperty = () => {
               handleFilterChange={handleFilterChange}
               filterData={filterData}
             />
-            
+            <IndoorFeatures
+              filter={filter}
+              handleFilterChange={handleFilterChange}
+              filterData={filterData}
+            />
             <Separator className="my-6" />
 
             {/* Property Images */}
