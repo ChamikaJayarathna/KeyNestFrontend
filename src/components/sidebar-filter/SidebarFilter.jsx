@@ -5,6 +5,7 @@ import OutdoorFeatures from "./components/OutdoorFeatures";
 import IndoorFeatures from "./components/IndoorFeatures";
 import ClimateFeatures from "./components/ClimateFeatures";
 import AccessibilityFeatures from "./components/AccessibilityFeatures";
+import Specification from "./components/Specification";
 
 const SidebarFilter = () => {
 
@@ -21,8 +22,27 @@ const SidebarFilter = () => {
     <div className="p-6 space-y-6 border-r-3 h-screen overflow-y-auto sticky top-0 no-scrollbar">
 
       <PropertyTypes filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
+      <Specification/>
 
-      
+      {/* <div>
+        <h2 className="text-custom-teal-blue text-base font-bold mb-2">
+          Land size
+        </h2>
+        <div className="flex gap-4">
+          <div className="w-1/2">
+            <div className="text-sm text-gray-600 mb-1">Min</div>
+            <select className="w-full p-2 border rounded">
+              <option>Any</option>
+            </select>
+          </div>
+          <div className="w-1/2">
+            <div className="text-sm text-gray-600 mb-1">Max</div>
+            <select className="w-full p-2 border rounded">
+              <option>Any</option>
+            </select>
+          </div>
+        </div>
+      </div> */}
 
       <div>
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
