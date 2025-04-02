@@ -8,6 +8,7 @@ import AccessibilityFeatures from "./components/AccessibilityFeatures";
 import Specification from "./components/Specification";
 import Condition from "./components/Condition";
 import { Button } from "../ui/button";
+import TransactionType from "./components/TransactionType";
 
 const SidebarFilter = () => {
   const [filterData, setFilterData] = useState({});
@@ -21,6 +22,12 @@ const SidebarFilter = () => {
 
   return (
     <div className="p-6 space-y-6 border-r-3 h-screen overflow-y-auto sticky top-0 no-scrollbar">
+      <TransactionType
+        filter={filter}
+        handleFilterChange={handleFilterChange}
+        filterData={filterData}
+      />
+      
       <PropertyTypes
         filter={filter}
         handleFilterChange={handleFilterChange}
