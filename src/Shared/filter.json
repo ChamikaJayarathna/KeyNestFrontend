@@ -44,11 +44,6 @@
       "label": "Rural",
       "name": "rural",
       "fieldType": "checkbox"
-    },
-    {
-      "label": "Rural",
-      "name": "rural",
-      "fieldType": "checkbox"
     }
   ],
 

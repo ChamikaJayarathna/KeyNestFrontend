@@ -1,31 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import filter from "../../Shared/filter.json";
+import { Checkbox } from "../ui/checkbox";
 
 const SidebarFilter = () => {
-  const propertyTypes = [
-    "All",
-    "House",
-    "Townhouse",
-    "Apartment & Unit",
-    "Villa",
-    "Retirement Living",
-    "Land",
-    "Acreage",
-    "Rural",
-    "Block of Unit",
-  ];
 
-  const outdoorFeatures = [
-    "Swimming pool",
-    "Balcony",
-    "Garage",
-    "Shed",
-    "Fully fenced",
-    "Undercover parking",
-    "Outdoor spa",
-    "Tennis court",
-    "Outdoor area",
-  ];
+  const [filterData, setFilterData] = useState({});
+
+  const handleFilterChange = (name, isChecked) => {
+    setFilterData((prevData) => ({
+      ...prevData,
+      [name]: isChecked,
+    }));
+  };
 
   const indoorFeatures = [
     "Ensuite",
@@ -67,15 +53,11 @@ const SidebarFilter = () => {
           Property Type
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-          {propertyTypes.map((type) => (
-            <label key={type} className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                className="w-4 h-4 border-gray-300 rounded accent-black"
-                defaultChecked={type === "All"}
-              />
-              <span className="text-sm">{type}</span>
-            </label>
+          {filter.propertyTypes.map((item, index) => (
+            <div key={index} className="flex gap-2 items-center">
+              <Checkbox checked={!!filterData[item.name]} onCheckedChange={(checked)=> handleFilterChange(item.name, checked)}/>
+              <h2>{item.label}</h2>
+            </div>
           ))}
         </div>
       </div>
@@ -185,11 +167,11 @@ const SidebarFilter = () => {
           Outdoor features
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-          {outdoorFeatures.map((feature) => (
-            <label key={feature} className="flex items-center gap-2">
-              <input type="checkbox" className="w-4 h-4 accent-black" />
-              <span className="text-sm">{feature}</span>
-            </label>
+          {filter.outdoorFeatures.map((item, index) => (
+            <div key={index} className="flex gap-2 items-center">
+              <Checkbox checked={!!filterData[item.name]} onCheckedChange={(checked)=> handleFilterChange(item.name, checked)}/>
+              <h2>{item.label}</h2>
+            </div>
           ))}
         </div>
       </div>
