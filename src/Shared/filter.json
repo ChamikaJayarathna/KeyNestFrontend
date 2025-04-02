@@ -2,7 +2,7 @@
   "propertyTypes": [
     {
       "label": "All",
-      "name": "all",
+      "name": "propertyTypesAll",
       "fieldType": "checkbox"
     },
     {
@@ -216,7 +216,7 @@
   "condition": [
     {
       "label": "All",
-      "name": "all",
+      "name": "conditionAll",
       "fieldType": "checkbox"
     },
     {
@@ -234,7 +234,7 @@
   "saleMethod": [
     {
       "label": "All",
-      "name": "all",
+      "name": "saleMethodAll",
       "fieldType": "checkbox"
     },
     {
