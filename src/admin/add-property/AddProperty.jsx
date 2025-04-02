@@ -17,6 +17,7 @@ import filter from "../../Shared/filter.json";
 import OutdoorFeatures from "./components/OutdoorFeatures";
 import IndoorFeatures from "./components/IndoorFeatures";
 import ClimateFeatures from "./components/ClimateFeatures";
+import AccessibilityFeatures from "./components/AccessibilityFeatures";
 
 const AddProperty = () => {
   const [formData, setFormData] = useState({});
@@ -204,6 +205,11 @@ const AddProperty = () => {
               filterData={filterData}
             />
             <ClimateFeatures
+              filter={filter}
+              handleFilterChange={handleFilterChange}
+              filterData={filterData}
+            />
+            <AccessibilityFeatures
               filter={filter}
               handleFilterChange={handleFilterChange}
               filterData={filterData}
