@@ -4,6 +4,7 @@ import PropertyTypes from "./components/PropertyTypes";
 import OutdoorFeatures from "./components/OutdoorFeatures";
 import IndoorFeatures from "./components/IndoorFeatures";
 import ClimateFeatures from "./components/ClimateFeatures";
+import AccessibilityFeatures from "./components/AccessibilityFeatures";
 
 const SidebarFilter = () => {
 
@@ -15,16 +16,6 @@ const SidebarFilter = () => {
       [name]: isChecked,
     }));
   };
-
-  const accessibilityFeatures = [
-    "Single storey",
-    "Step free entry",
-    "Wide doorways",
-    "Roll in shower",
-    "Elevator",
-    "Bathroom grab rails",
-    "Accessible parking",
-  ];
 
   return (
     <div className="p-6 space-y-6 border-r-3 h-screen overflow-y-auto sticky top-0 no-scrollbar">
@@ -134,20 +125,7 @@ const SidebarFilter = () => {
       <OutdoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
       <IndoorFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
       <ClimateFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
-
-      <div>
-        <h2 className="text-custom-teal-blue text-base font-bold mb-2">
-          Accessibility features
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-          {accessibilityFeatures.map((feature) => (
-            <label key={feature} className="flex items-center gap-2">
-              <input type="checkbox" className="w-4 h-4 accent-black" />
-              <span className="text-sm">{feature}</span>
-            </label>
-          ))}
-        </div>
-      </div>
+      <AccessibilityFeatures filter={filter} handleFilterChange={handleFilterChange} filterData={filterData}/>
 
       <div className="flex justify-end">
         <button className="bg-black text-white py-2 px-6 rounded text-lg">
