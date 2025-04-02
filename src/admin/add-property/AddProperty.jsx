@@ -88,10 +88,10 @@ const AddProperty = () => {
       ...prevData,
       [category]: {
         ...prevData[category],
-        [name]: isChecked
-      }
+        [name]: isChecked,
+      },
     }));
-  };  
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
