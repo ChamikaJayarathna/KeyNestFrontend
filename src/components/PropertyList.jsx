@@ -23,7 +23,7 @@ const PropertyList = () => {
     <div>
       <SearchBox />
 
-      <div className="p-5 grid grid-cols-1 md:grid-cols-4 gap-40">
+      <div className="px-8 grid grid-cols-1 md:grid-cols-4 gap-45">
         {propertyDetails.map((property) => (
           <PropertyCard key={property.id} property={property} />
         ))}

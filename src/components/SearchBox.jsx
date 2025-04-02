@@ -3,7 +3,7 @@ import React from "react";
 const SearchBox = () => {
   return (
     <div>
-      <div className="flex justify-end">
+      <div className="flex justify-end py-5 px-5">
         <div
           className="flex items-center border border-custom-teal-blue rounded-lg overflow-hidden max-w-md"
           style={{ width: "426px", height: "50px" }}
