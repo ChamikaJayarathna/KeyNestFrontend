@@ -12,6 +12,12 @@ import { Button } from "../ui/button";
 
 const SidebarFilter = ({ filterProperty }) => {
   const [filterData, setFilterData] = useState({});
+  const [specificationData, setSpecificationData] = useState({
+    price: [0],
+    bedrooms: [0],
+    bathrooms: [0],
+    carSpaces: [0],
+  });
 
   const handleFilterChange = (category, name, isChecked) => {
     setFilterData((prevData) => ({
@@ -23,6 +29,21 @@ const SidebarFilter = ({ filterProperty }) => {
     }));
   };
 
+  const handleSpecificationChange = (key, value) => {
+    setSpecificationData((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+
+    setFilterData((prevData) => ({
+      ...prevData,
+      specifications: {
+        ...prevData.specifications,
+        [key]: value,
+      },
+    }));
+  };
+
   return (
     <div className="p-6 space-y-6 border-r-3 h-screen overflow-y-auto sticky top-0 no-scrollbar">
       <TransactionType
@@ -30,14 +51,17 @@ const SidebarFilter = ({ filterProperty }) => {
         handleFilterChange={handleFilterChange}
         filterData={filterData}
       />
-      
+
       <PropertyTypes
         filter={filter}
         handleFilterChange={handleFilterChange}
         filterData={filterData}
       />
 
-      <Specification />
+      <Specification
+        specificationData={specificationData}
+        handleSpecificationChange={handleSpecificationChange}
+      />
 
       <Condition
         filter={filter}
