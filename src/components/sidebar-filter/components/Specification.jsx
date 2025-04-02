@@ -30,7 +30,7 @@ const Specification = () => {
 
       <div className="mb-5">
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
-          Car spaces
+          Car Spaces
         </h2>
         <div className="text-xs mb-1">0 - 10</div>
         <Slider defaultValue={[33]} max={100} step={1} />

@@ -5,7 +5,7 @@ const SaleMethod = ({ filter, handleFilterChange, filterData }) => {
   return (
     <div>
       <h2 className="text-custom-teal-blue text-base font-bold mb-2">
-        SaleMethod
+        Sale Method
       </h2>
       <div className="flex items-center gap-5">
         {filter.saleMethod.map((item, index) => (
