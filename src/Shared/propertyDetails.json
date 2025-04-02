@@ -46,7 +46,7 @@
       "label": "Car Spaces",
       "name": "carSpaces",
       "fieldType": "number",
-      "icon": "FaBath"
+      "icon": "FaCar"
     },
     {
       "label": "Property Type",
@@ -77,7 +77,7 @@
       "name": "condition",
       "fieldType": "dropdown",
       "options": ["New", "Established"],
-      "icon": "FaTools"
+      "icon": "FaCheckCircle"
     },
     {
       "label": "Animal",

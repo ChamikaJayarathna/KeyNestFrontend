@@ -12,6 +12,8 @@ import { MdLocationSearching } from "react-icons/md";
 import { FaLocationCrosshairs } from "react-icons/fa6";
 import { FaFileAlt } from "react-icons/fa";
 import { FaBath } from "react-icons/fa6";
+import { FaCar } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 const iconMap = {
   FaClipboardList: <FaClipboardList />,
@@ -27,6 +29,8 @@ const iconMap = {
   MdLocationSearching: <MdLocationSearching />,
   FaLocationCrosshairs: <FaLocationCrosshairs />,
   FaFileAlt: <FaFileAlt />,
+  FaCar: <FaCar />,
+  FaCheckCircle: <FaCheckCircle />,
 };
 
 const IconField = ({ icon }) => {
