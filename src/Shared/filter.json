@@ -1,11 +1,6 @@
 {
   "propertyTypes": [
     {
-      "label": "All",
-      "name": "propertyTypesAll",
-      "fieldType": "checkbox"
-    },
-    {
       "label": "House",
       "name": "house",
       "fieldType": "checkbox"
@@ -215,11 +210,6 @@
 
   "condition": [
     {
-      "label": "All",
-      "name": "conditionAll",
-      "fieldType": "checkbox"
-    },
-    {
       "label": "New",
       "name": "new",
       "fieldType": "checkbox"
@@ -227,24 +217,6 @@
     {
       "label": "Established",
       "name": "established",
-      "fieldType": "checkbox"
-    }
-  ],
-
-  "saleMethod": [
-    {
-      "label": "All",
-      "name": "saleMethodAll",
-      "fieldType": "checkbox"
-    },
-    {
-      "label": "Auction",
-      "name": "auction",
-      "fieldType": "checkbox"
-    },
-    {
-      "label": "Private treat sale",
-      "name": "privateTreatSale",
       "fieldType": "checkbox"
     }
   ]

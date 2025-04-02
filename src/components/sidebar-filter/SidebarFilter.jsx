@@ -7,7 +7,6 @@ import ClimateFeatures from "./components/ClimateFeatures";
 import AccessibilityFeatures from "./components/AccessibilityFeatures";
 import Specification from "./components/Specification";
 import Condition from "./components/Condition";
-import SaleMethod from "./components/SaleMethod";
 import { Button } from "../ui/button";
 
 const SidebarFilter = () => {
@@ -31,12 +30,6 @@ const SidebarFilter = () => {
       <Specification />
 
       <Condition
-        filter={filter}
-        handleFilterChange={handleFilterChange}
-        filterData={filterData}
-      />
-
-      <SaleMethod
         filter={filter}
         handleFilterChange={handleFilterChange}
         filterData={filterData}
