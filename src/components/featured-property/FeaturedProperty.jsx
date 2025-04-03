@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import FeaturedPropertyCard from "./components/FeaturedPropertyCard";
 import FeaturedData from "@/Shared/FeaturedData";
+import FeaturedPropertyList from "./components/FeaturedPropertyList";
 
 const FeaturedProperty = () => {
+  const [selectedPropertyType, setSelectedPropertyType] = useState(null);
+
+  const handleCardClick = (title) => {
+    setSelectedPropertyType(title);
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
@@ -14,12 +21,17 @@ const FeaturedProperty = () => {
       <div className="flex flex-wrap justify-center gap-10">
         {FeaturedData.map((feature, index) => (
           <FeaturedPropertyCard
+            key={index}
             title={feature.name}
             icon={feature.icon}
-            key={index}
+            onClick={() => handleCardClick(feature.name)}
           />
         ))}
       </div>
+
+      {selectedPropertyType && (
+        <FeaturedPropertyList title={selectedPropertyType} />
+      )}
     </div>
   );
 };

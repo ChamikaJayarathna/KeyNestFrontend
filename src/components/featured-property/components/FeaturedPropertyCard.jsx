@@ -1,8 +1,11 @@
 import React from "react";
 
-const FeaturedPropertyCard = ({ title, icon: Icon }) => {
+const FeaturedPropertyCard = ({ title, icon: Icon, onClick }) => {
   return (
-    <div className="bg-custom-grayish-white rounded-2xl p-8 max-w-[200px] w-full flex flex-col items-center justify-center cursor-pointer">
+    <div
+      className="bg-custom-grayish-white rounded-2xl p-8 max-w-[200px] w-full flex flex-col items-center justify-center cursor-pointer"
+      onClick={onClick}
+    >
       <div className="bg-custom-lavender-blue rounded-full p-6 mb-4">
         <div className="text-4xl">{Icon}</div>
       </div>
