@@ -7,7 +7,6 @@ const FeaturedPropertyCard = ({ title, subtitle, icon: Icon }) => {
         <div className="text-4xl">{Icon}</div>
       </div>
       <h2 className="text-xl font-bold text-black mb-2 text-center">{title}</h2>
-      <p className="text-sm text-custom-steel-blue">{subtitle} Property</p>
     </div>
   );
 };

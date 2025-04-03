@@ -1,5 +1,6 @@
 import React from "react";
 import FeaturedPropertyCard from "./components/FeaturedPropertyCard";
+import FeaturedData from "@/Shared/FeaturedData";
 
 const FeaturedProperty = () => {
   return (
@@ -11,11 +12,13 @@ const FeaturedProperty = () => {
         <p className="text-gray-600">Find All Type Of Property</p>
       </div>
       <div className="flex flex-wrap justify-center gap-10">
-        {/* <FeaturedPropertyCard
-          icon={<FaHouse />}
-          title="House"
-          subtitle="122"
-        /> */}
+        {FeaturedData.map((feature, index) => (
+          <FeaturedPropertyCard
+            title={feature.name}
+            icon={feature.icon}
+            key={index}
+          />
+        ))}
       </div>
     </div>
   );
