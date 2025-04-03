@@ -21,14 +21,12 @@ const Specification = ({ specificationData, handleSpecificationChange }) => {
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
           Bedrooms
         </h2>
-        <div className="text-xs mb-1">{specificationData.bedrooms}</div>
+        <div className="text-xs mb-1">{specificationData.bedroom}</div>
         <Slider
           max={10}
           step={1}
-          value={specificationData.bedrooms}
-          onValueChange={(value) =>
-            handleSpecificationChange("bedrooms", value)
-          }
+          value={specificationData.bedroom}
+          onValueChange={(value) => handleSpecificationChange("bedroom", value)}
         />
       </div>
 
@@ -36,13 +34,13 @@ const Specification = ({ specificationData, handleSpecificationChange }) => {
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
           Bathrooms
         </h2>
-        <div className="text-xs mb-1">{specificationData.bathrooms}</div>
+        <div className="text-xs mb-1">{specificationData.bathroom}</div>
         <Slider
           max={10}
           step={1}
-          value={specificationData.bathrooms}
+          value={specificationData.bathroom}
           onValueChange={(value) =>
-            handleSpecificationChange("bathrooms", value)
+            handleSpecificationChange("bathroom", value)
           }
         />
       </div>

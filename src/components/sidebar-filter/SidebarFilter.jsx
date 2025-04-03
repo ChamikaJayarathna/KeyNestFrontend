@@ -33,20 +33,17 @@ const SidebarFilter = ({ onFilter }) => {
 
     setFilterData((prevData) => ({
       ...prevData,
-      specifications: {
-        ...prevData.specifications,
-        [key]: value,
-      },
+      [key]: value,
     }));
   };
 
   const handleFilter = async () => {
     try {
       const filterDataToSend = {
-        price: filterData?.price,
-        bedroom: filterData?.bedroom,
-        bathroom: filterData?.bathroom,
-        carSpaces: filterData?.carSpaces,
+        price: filterData?.price || 0,
+        bedroom: filterData?.bedroom || 0,
+        bathroom: filterData?.bathroom || 0,
+        carSpaces: filterData?.carSpaces || 0,
         condition: filterData?.condition,
         transactionType: filterData?.transactionType,
         propertyTypes: filterData?.propertyTypes,
@@ -64,6 +61,7 @@ const SidebarFilter = ({ onFilter }) => {
       );
       onFilter(res.data);
       console.log(res.data);
+      console.log("Filter Data to Send:", filterDataToSend);
     } catch (error) {
       console.log(error);
     }
