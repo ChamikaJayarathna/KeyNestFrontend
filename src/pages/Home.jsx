@@ -1,8 +1,8 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
-import PropertyTypes from "../components/PropertyTypes";
 import Footer from "../components/Footer";
 import Header from "@/components/Header";
+import FeaturedProperty from "@/components/featured-property/FeaturedProperty";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
         <HeroSection />
       </section>
       <section className="h-screen w-full">
-        <PropertyTypes />
+        <FeaturedProperty />
       </section>
       <section className="h-screen w-full">
         <Footer />
