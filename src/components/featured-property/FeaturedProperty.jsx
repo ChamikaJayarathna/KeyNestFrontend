@@ -1,4 +1,6 @@
 import React from "react";
+import FeaturedPropertyCard from "./components/FeaturedPropertyCard";
+import { FaHouse } from "react-icons/fa6";
 
 const FeaturedProperty = () => {
   return (
@@ -10,7 +12,11 @@ const FeaturedProperty = () => {
         <p className="text-gray-600">Find All Type Of Property</p>
       </div>
       <div className="flex flex-wrap justify-center gap-10">
-        
+        <FeaturedPropertyCard
+          icon={<FaHouse />}
+          title="House"
+          subtitle="122 Property"
+        />
       </div>
     </div>
   );
