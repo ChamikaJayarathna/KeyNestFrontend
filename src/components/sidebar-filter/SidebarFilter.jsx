@@ -11,7 +11,7 @@ import TransactionType from "./components/TransactionType";
 import { Button } from "../ui/button";
 import apiRequest from "@/lib/apiRequest";
 
-const SidebarFilter = () => {
+const SidebarFilter = ({ onFilter }) => {
   const [filterData, setFilterData] = useState({});
   const [specificationData, setSpecificationData] = useState({});
 
@@ -62,7 +62,7 @@ const SidebarFilter = () => {
         `/property/filter-property`,
         filterDataToSend
       );
-      setFilterData(res.data);
+      onFilter(res.data);
       console.log(res.data);
     } catch (error) {
       console.log(error);
