@@ -9,9 +9,10 @@ import Specification from "./components/Specification";
 import Condition from "./components/Condition";
 import TransactionType from "./components/TransactionType";
 import { Button } from "../ui/button";
+import apiRequest from "@/lib/apiRequest";
 
 const SidebarFilter = () => {
-  const [filterData, setFilterData] = useState({});  
+  const [filterData, setFilterData] = useState({});
   const [specificationData, setSpecificationData] = useState({});
 
   const handleFilterChange = (category, name, isChecked) => {
@@ -23,7 +24,7 @@ const SidebarFilter = () => {
       },
     }));
   };
-  
+
   const handleSpecificationChange = (key, value) => {
     setSpecificationData((prev) => ({
       ...prev,
@@ -37,6 +38,35 @@ const SidebarFilter = () => {
         [key]: value,
       },
     }));
+  };
+
+  const handleFilter = async () => {
+    try {
+      const filterDataToSend = {
+        price: filterData?.price,
+        bedroom: filterData?.bedroom,
+        bathroom: filterData?.bathroom,
+        carSpaces: filterData?.carSpaces,
+        condition: filterData?.condition,
+        transactionType: filterData?.transactionType,
+        propertyTypes: filterData?.propertyTypes,
+        filter: {
+          outdoorFeatures: filterData?.outdoorFeatures,
+          indoorFeatures: filterData?.indoorFeatures,
+          climateFeatures: filterData?.climateFeatures,
+          accessibilityFeatures: filterData?.accessibilityFeatures,
+        },
+      };
+
+      const res = await apiRequest.post(
+        `/property/filter-property`,
+        filterDataToSend
+      );
+      setFilterData(res.data);
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -89,7 +119,7 @@ const SidebarFilter = () => {
       />
 
       <div className="flex justify-end">
-        <Button>Apply</Button>
+        <Button onClick={handleFilter}>Apply</Button>
       </div>
     </div>
   );
