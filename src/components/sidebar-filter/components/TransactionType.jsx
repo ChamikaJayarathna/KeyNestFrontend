@@ -1,5 +1,5 @@
-import { Checkbox } from "@/components/ui/checkbox";
 import React from "react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const TransactionType = ({ filter, handleFilterChange, filterData }) => {
   return (

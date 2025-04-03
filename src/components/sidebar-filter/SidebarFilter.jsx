@@ -10,14 +10,9 @@ import Condition from "./components/Condition";
 import TransactionType from "./components/TransactionType";
 import { Button } from "../ui/button";
 
-const SidebarFilter = ({ filterProperty }) => {
-  const [filterData, setFilterData] = useState({});
-  const [specificationData, setSpecificationData] = useState({
-    price: [0],
-    bedrooms: [0],
-    bathrooms: [0],
-    carSpaces: [0],
-  });
+const SidebarFilter = () => {
+  const [filterData, setFilterData] = useState({});  
+  const [specificationData, setSpecificationData] = useState({});
 
   const handleFilterChange = (category, name, isChecked) => {
     setFilterData((prevData) => ({
@@ -28,7 +23,7 @@ const SidebarFilter = ({ filterProperty }) => {
       },
     }));
   };
-
+  
   const handleSpecificationChange = (key, value) => {
     setSpecificationData((prev) => ({
       ...prev,
@@ -94,7 +89,7 @@ const SidebarFilter = ({ filterProperty }) => {
       />
 
       <div className="flex justify-end">
-        <Button onClick={() => filterProperty(filterData)}>Apply</Button>
+        <Button>Apply</Button>
       </div>
     </div>
   );
