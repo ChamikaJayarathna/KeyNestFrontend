@@ -8,9 +8,9 @@ const Specification = ({ specificationData, handleSpecificationChange }) => {
         <h2 className="text-custom-teal-blue text-base font-bold mb-2">
           Price
         </h2>
-        <div className="text-xs mb-1">LKR {specificationData.price}</div>
+        <div className="text-xs mb-1">LKR {specificationData.price?.toLocaleString() || "0"}</div>
         <Slider
-          max={3000000}
+          max={100000}
           step={1}
           value={specificationData.price}
           onValueChange={(value) => handleSpecificationChange("price", value)}
