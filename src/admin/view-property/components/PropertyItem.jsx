@@ -26,9 +26,20 @@ const PropertyItem = ({ property, onDeleteSuccess }) => {
 
   return (
     <div className="max-w-[350px] rounded-xl bg-white border hover:shadow-md cursor-pointer">
-      <h2 className="absolute m-2 bg-green-500 px-2 rounded-full text-sm text-white">
+      <h2
+        className={`absolute m-2 px-2 rounded-full text-sm text-white ${
+          property?.type === "Rent"
+            ? "bg-yellow-500"
+            : property?.type === "Buy"
+            ? "bg-green-500"
+            : property?.type === "Sell"
+            ? "bg-red-500"
+            : ""
+        }`}
+      >
         {property?.type}
       </h2>
+
       <img
         src={property?.images[0]}
         width={"100%"}
@@ -37,7 +48,9 @@ const PropertyItem = ({ property, onDeleteSuccess }) => {
       />
 
       <div className="p-4">
-      <h2 className="font-bold text-black text-lg mb-2 truncate">{property?.title}</h2>
+        <h2 className="font-bold text-black text-lg mb-2 truncate">
+          {property?.title}
+        </h2>
         <Separator />
         <div className="grid md:grid-cols-3 mt-5 text-black">
           <div className="flex flex-col items-center">
