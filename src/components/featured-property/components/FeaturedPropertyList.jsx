@@ -31,20 +31,26 @@ const FeaturedPropertyList = ({ title }) => {
 
   return (
     <div className="mt-10 mx-10 hidden md:block">
-      <Carousel>
-        <CarouselContent>
-          {property.map((property, index) => (
-            <CarouselItem
-              key={index}
-              className="basis-1/2 md:basis-1/3 lg:basis-1/4"
-            >
-              <PropertyCard property={property} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      {property.length > 0 ? (
+        <Carousel>
+          <CarouselContent>
+            {property.map((property, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
+              >
+                <PropertyCard property={property} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      ) : (
+        <div className="text-center text-gray-500 py-10 text-lg">
+          No Featured Property List found
+        </div>
+      )}
     </div>
   );
 };
