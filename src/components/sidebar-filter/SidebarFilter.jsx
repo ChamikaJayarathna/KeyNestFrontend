@@ -60,8 +60,8 @@ const SidebarFilter = ({ onFilter }) => {
         filterDataToSend
       );
       onFilter(res.data);
-      console.log(res.data);
-      console.log("Filter Data to Send:", filterDataToSend);
+      // console.log(res.data);
+      // console.log("Filter Data to Send:", filterDataToSend);
     } catch (error) {
       console.log(error);
     }
