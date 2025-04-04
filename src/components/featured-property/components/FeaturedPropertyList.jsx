@@ -30,10 +30,10 @@ const FeaturedPropertyList = ({ title }) => {
   }, [title]);
 
   return (
-    <div className="mt-10 mx-10 hidden md:block">
+    <div className="mt-10 mx-24 hidden md:block">
       {property.length > 0 ? (
         <Carousel>
-          <CarouselContent>
+          <CarouselContent  className="gap-x-20">
             {property.map((property, index) => (
               <CarouselItem
                 key={index}
