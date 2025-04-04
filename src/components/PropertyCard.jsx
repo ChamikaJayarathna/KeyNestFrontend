@@ -20,6 +20,8 @@ const PropertyCard = ({ property }) => {
               ? "bg-yellow-100 text-yellow-500"
               : property?.type === "Buy"
               ? "bg-green-100 text-green-600"
+              : property?.type === "Sell"
+              ? "bg-red-100 text-red-500"
               : "bg-gray-100 text-gray-600"
           }`}
         >
@@ -27,8 +29,11 @@ const PropertyCard = ({ property }) => {
             ? "For Rent"
             : property?.type === "Buy"
             ? "Buy"
+            : property?.type === "Sell"
+            ? "Sell"
             : ""}
         </span>
+
         <span className="bg-gray-100 text-gray-600 text-sm font-semibold px-3 py-1 border ml-[-1px]">
           {property?.property?.charAt(0).toUpperCase() +
             property?.property?.slice(1)}
@@ -49,7 +54,9 @@ const PropertyCard = ({ property }) => {
 
       <div className="flex items-center justify-between px-3 py-3">
         <span className="text-base font-bold text-custom-teal-blue">
-          <span className="font-bold">LKR {property?.price.toLocaleString()}</span>
+          <span className="font-bold">
+            LKR {property?.price.toLocaleString()}
+          </span>
         </span>
         <h2
           className="text-primary text-sm flex gap-2 items-center cursor-pointer"
