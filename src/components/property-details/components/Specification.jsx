@@ -8,10 +8,14 @@ const Specification = ({ propertyDetails }) => {
       <h2 className="font-medium text-2xl text-primary mb-5">Specification</h2>
       {propertyDetails && Array.isArray(PropertySpecification) ? (
         PropertySpecification.map((item, index) => (
-          <div key={index} className="flex gap-2 items-center mb-3">
-            <IconField icon={item?.icon} />
-            <span>{item?.label}:</span>
-            <span>{propertyDetails?.[item?.name]}</span>
+          <div key={index} className="flex justify-between items-center mb-3">
+            <div className="flex items-center gap-3">
+              <IconField icon={item?.icon} />
+              <span>{item?.label}</span>
+            </div>
+            <div>
+              <span>{propertyDetails?.[item?.name]}</span>
+            </div>
           </div>
         ))
       ) : (
