@@ -34,4 +34,14 @@ export default [
     name: "bathroom",
     icon: "FaBath",
   },
+  {
+    label: "Car Spaces",
+    name: "carSpaces",
+    icon: "FaCar",
+  },
+  {
+    label: "Animal",
+    name: "pet",
+    icon: "GiSittingDog",
+  },
 ];

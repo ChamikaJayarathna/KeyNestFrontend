@@ -22,6 +22,7 @@ const PropertyDetailsCard = () => {
         `/property/get-single-property/${id}`
       );
       setPropertyDetails(response.data);
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
