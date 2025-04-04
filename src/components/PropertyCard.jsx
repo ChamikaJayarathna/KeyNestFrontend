@@ -49,8 +49,7 @@ const PropertyCard = ({ property }) => {
 
       <div className="flex items-center justify-between px-3 py-3">
         <span className="text-base font-bold text-custom-teal-blue">
-          <span className="font-bold">LKR {property?.price}</span>
-          <span className="text-sm text-gray-500 font-normal"> /Sqft</span>
+          <span className="font-bold">LKR {property?.price.toLocaleString()}</span>
         </span>
         <h2
           className="text-primary text-sm flex gap-2 items-center cursor-pointer"
