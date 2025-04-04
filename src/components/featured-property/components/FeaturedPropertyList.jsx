@@ -30,7 +30,7 @@ const FeaturedPropertyList = ({ title }) => {
   }, [title]);
 
   return (
-    <div className="mx-24 hidden md:block">
+    <div className="mt-10 mx-10 hidden md:block">
       <Carousel>
         <CarouselContent>
           {property.map((property, index) => (
