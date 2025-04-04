@@ -68,7 +68,7 @@ const PropertyItem = ({ property, onDeleteSuccess }) => {
         </div>
         <Separator className="my-2" />
         <div className="flex items-center justify-between text-black">
-          <h2 className="font-bold text-xl">LKR {property?.price}</h2>
+          <h2 className="font-bold text-xl">LKR {property?.price.toLocaleString()}</h2>
         </div>
       </div>
 
