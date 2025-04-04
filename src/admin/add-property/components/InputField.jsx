@@ -8,6 +8,7 @@ const InputField = ({ item, handleInputChange, propertyInfo }) => {
         type={item?.fieldType}
         name={item?.name}
         required={item?.required}
+        step={item?.fieldType === "number" ? "any" : undefined}
         defaultValue={propertyInfo?.[item.name]}
         onChange={(e) => handleInputChange(item.name, e.target.value)}
       />
