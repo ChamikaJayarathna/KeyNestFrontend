@@ -4,7 +4,9 @@ import FeaturedData from "@/Shared/FeaturedData";
 import FeaturedPropertyList from "./components/FeaturedPropertyList";
 
 const FeaturedProperty = () => {
-  const [selectedPropertyType, setSelectedPropertyType] = useState(null);
+  const [selectedPropertyType, setSelectedPropertyType] = useState(
+    FeaturedData[0]?.name || null
+  );
 
   const handleCardClick = (title) => {
     setSelectedPropertyType(title);
