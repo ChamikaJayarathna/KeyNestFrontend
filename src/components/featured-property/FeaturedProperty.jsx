@@ -25,6 +25,7 @@ const FeaturedProperty = () => {
             title={feature.name}
             icon={feature.icon}
             onClick={() => handleCardClick(feature.name)}
+            selected={selectedPropertyType === feature.name}
           />
         ))}
       </div>

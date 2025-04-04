@@ -21,7 +21,7 @@ const FeaturedData = [
   },
   {
     id: 4,
-    name: "Townhouse",
+    name: "Villa",
     icon: <BsFillBuildingsFill />,
   },
   {
