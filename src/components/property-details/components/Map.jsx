@@ -5,7 +5,7 @@ import Pin from "./Pin";
 
 const Map = ({ propertyDetails }) => {
   return (
-    <div className="mt-5 rounded-md overflow-hidden">
+    <div className="rounded-md overflow-hidden">
       <MapContainer
         center={[propertyDetails?.latitude, propertyDetails?.longitude]}
         zoom={13}

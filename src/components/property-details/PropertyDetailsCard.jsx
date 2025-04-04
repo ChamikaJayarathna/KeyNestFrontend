@@ -7,6 +7,7 @@ import Description from "./components/Description";
 import apiRequest from "@/lib/apiRequest";
 import Map from "./components/Map";
 import Header from "../Header";
+import Pricing from "./components/Pricing";
 
 const PropertyDetailsCard = () => {
   const [propertyDetails, setPropertyDetails] = useState();
@@ -38,7 +39,8 @@ const PropertyDetailsCard = () => {
             <ImageGallery propertyDetails={propertyDetails} />
             <Description propertyDetails={propertyDetails} />
           </div>
-          <div className="">
+          <div className="flex flex-col space-y-6">
+            <Pricing propertyDetails={propertyDetails} />
             <Specification propertyDetails={propertyDetails} />
             {propertyDetails &&
             propertyDetails.latitude &&
