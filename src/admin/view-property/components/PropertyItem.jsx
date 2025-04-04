@@ -37,7 +37,7 @@ const PropertyItem = ({ property, onDeleteSuccess }) => {
       />
 
       <div className="p-4">
-        <h2 className="font-bold text-black text-lg mb-2">{property?.title}</h2>
+      <h2 className="font-bold text-black text-lg mb-2 truncate">{property?.title}</h2>
         <Separator />
         <div className="grid md:grid-cols-3 mt-5 text-black">
           <div className="flex flex-col items-center">
