@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import { LuImagePlus } from "react-icons/lu";
-import { PiSlidersHorizontal } from "react-icons/pi";
 import FileUpload from "./FileUpload";
 import { useNavigate } from "react-router-dom";
 
@@ -84,11 +83,6 @@ const SearchCom = () => {
             </div>
           )}
         </div>
-
-        <button className="flex items-center gap-2 bg-black/30 border border-white/50 rounded-lg px-4 py-3 text-white hover:bg-black/40 transition-colors">
-          <PiSlidersHorizontal className="w-5 h-5" />
-          <span>Filters</span>
-        </button>
 
         <button onClick={handleSearch} className="bg-white text-black font-medium px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
           Search
