@@ -27,17 +27,29 @@ const Header = () => {
         }`}
       >
         <NavLink to={"/"}>
-          <li className="font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary">
+          <li
+            className={`font-medium hover:scale-105 transition-all cursor-pointer ${
+              isHomePage ? "hover:text-white" : "hover:text-primary"
+            }`}
+          >
             Home
           </li>
         </NavLink>
         <NavLink to={"/property"}>
-          <li className="font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary">
+          <li
+            className={`font-medium hover:scale-105 transition-all cursor-pointer ${
+              isHomePage ? "hover:text-white" : "hover:text-primary"
+            }`}
+          >
             Property
           </li>
         </NavLink>
         <NavLink to={"/contact"}>
-          <li className="font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary">
+          <li
+            className={`font-medium hover:scale-105 transition-all cursor-pointer ${
+              isHomePage ? "hover:text-white" : "hover:text-primary"
+            }`}
+          >
             Contact
           </li>
         </NavLink>
