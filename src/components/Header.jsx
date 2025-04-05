@@ -25,11 +25,6 @@ const Header = () => {
             Property
           </li>
         </NavLink>
-        {/* <NavLink>
-          <li className="font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary">
-            Services
-          </li>
-        </NavLink> */}
         <NavLink>
           <li className="font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary">
             Contact
