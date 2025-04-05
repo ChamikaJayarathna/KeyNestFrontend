@@ -1,7 +1,14 @@
-import React from "react";
+import AuthContext from "@/context/AuthContext";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 const ProfileDropdown = () => {
+  const { removeFromSession } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    removeFromSession();
+  };
+
   return (
     <div className="absolute right-0 mt-1 w-48 bg-white text-black shadow-lg rounded-lg overflow-hidden">
       <Link to="/admin/dashboard" className="block px-6 py-5 hover:bg-gray-100">
@@ -16,7 +23,10 @@ const ProfileDropdown = () => {
 
       <hr className="border-t border-gray-300 mx-auto w-[92%]" />
 
-      <button className="block w-full text-left px-6 py-5 hover:bg-gray-100">
+      <button
+        onClick={handleLogout}
+        className="block w-full text-left px-6 py-5 hover:bg-gray-100"
+      >
         Logout
       </button>
     </div>
