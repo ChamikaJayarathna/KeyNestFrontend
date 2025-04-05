@@ -57,7 +57,13 @@ const Header = () => {
       <div className="relative mr-5">
         {!token ? (
           <Link to={"/sign-in"}>
-            <Button>Join</Button>
+            <Button
+              className={`${
+                isHomePage ? "bg-white text-black" : "bg-black text-white"
+              }`}
+            >
+              Join
+            </Button>
           </Link>
         ) : (
           <div className="relative">
