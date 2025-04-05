@@ -29,14 +29,17 @@ const Dashboard = () => {
 
   const GetUserTotalPropertyCount = async () => {
     try {
-      const response = await apiRequest.get("/property/get-user-total-property-count", {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      const response = await apiRequest.get(
+        "/property/get-user-total-property-count",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setUserPropertyCount(response.data.count);
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div>
