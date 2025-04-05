@@ -59,7 +59,7 @@ const Header = () => {
           <Link to={"/sign-in"}>
             <Button
               className={`${
-                isHomePage ? "bg-white text-black" : "bg-black text-white"
+                isHomePage ? "bg-white text-black hover:bg-white" : "bg-black text-white"
               }`}
             >
               Join
