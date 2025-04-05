@@ -1,15 +1,19 @@
 import apiRequest from "@/lib/apiRequest";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "../admin-components/Header";
 import { FaBuilding } from "react-icons/fa";
 import { motion } from "framer-motion";
 import StatCard from "./components/StatCard";
+import AuthContext from "@/context/AuthContext";
 
 const Dashboard = () => {
   const [propertyCount, setPropertyCount] = useState();
+  const [userPropertyCount, setUserPropertyCount] = useState();
+  const { token } = useContext(AuthContext);
 
   useEffect(() => {
     GetTotalPropertyCount();
+    GetUserTotalPropertyCount();
   }, []);
 
   const GetTotalPropertyCount = async () => {
@@ -23,6 +27,17 @@ const Dashboard = () => {
     }
   };
 
+  const GetUserTotalPropertyCount = async () => {
+    try {
+      const response = await apiRequest.get("/property/get-user-total-property-count", {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setUserPropertyCount(response.data.count);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       <Header title="Dashboard" />
@@ -34,10 +49,17 @@ const Dashboard = () => {
           transition={{ duration: 1 }}
         >
           <StatCard
-            name="Total Property"
+            name="Total Property Count"
             icon={FaBuilding}
             color="#FCB454"
             value={propertyCount}
+          />
+
+          <StatCard
+            name="User Property Count"
+            icon={FaBuilding}
+            color="#F7374F"
+            value={userPropertyCount}
           />
         </motion.div>
       </div>
