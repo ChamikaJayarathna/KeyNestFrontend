@@ -1,19 +1,23 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook, FaApple } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import apiRequest from "../lib/apiRequest";
 import AuthContext from "../context/AuthContext";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const { setToken, setUserRole } = useContext(AuthContext);
 
   const navigate = useNavigate();
+
+  const togglePassword = () => {
+    setShowPassword((prevState) => !prevState);
+  };
 
   const userAuthServer = async () => {
     try {
@@ -62,7 +66,9 @@ const SignIn = () => {
         <div className="absolute top-8 text-center text-white">
           <Link to="/">
             <h1 className="text-3xl font-bold">KeyNest</h1>
-            <p className="text-sm opacity-80">The Property Management Company</p>
+            <p className="text-sm opacity-80">
+              The Property Management Company
+            </p>
           </Link>
         </div>
 
@@ -75,12 +81,20 @@ const SignIn = () => {
               className="mb-3 w-full rounded-md border border-custom-teal-blue p-3 outline-none"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              type="password"
-              placeholder="Password"
-              className="mb-2 w-full rounded-md border border-custom-teal-blue p-3 outline-none"
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="relative w-full mt-2">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                className="mb-2 w-full rounded-md border border-custom-teal-blue p-3 outline-none"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <div
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
+                onClick={togglePassword}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </div>
+            </div>
             <div className="mb-6 mt-2 text-right text-sm text-gray-500 w-full">
               <Link to="/forgot-password" className="hover:underline">
                 Forgot password?
@@ -97,29 +111,12 @@ const SignIn = () => {
 
           <div className="mt-4 text-center text-sm text-gray-600">
             Don't have an account?{" "}
-            <Link to="/sign-up" className="font-medium text-black hover:underline">
+            <Link
+              to="/sign-up"
+              className="font-medium text-black hover:underline"
+            >
               Create account
             </Link>
-          </div>
-
-          <div className="my-4 flex items-center">
-            <hr className="w-full border-gray-300" />
-            <span className="mx-2 text-sm text-gray-500">OR</span>
-            <hr className="w-full border-gray-300" />
-          </div>
-
-          <p className="text-center opacity-45 text-base">Continue with</p>
-
-          <div className="mt-3 flex justify-center space-x-4">
-            <button className="text-gray-700 hover:scale-105">
-              <FcGoogle size={35} />
-            </button>
-            <button className="text-blue-600 hover:scale-105">
-              <FaFacebook size={35} />
-            </button>
-            <button className="text-black hover:scale-105">
-              <FaApple size={35} />
-            </button>
           </div>
         </div>
       </div>
