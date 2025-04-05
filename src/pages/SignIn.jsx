@@ -5,10 +5,9 @@ import apiRequest from "../lib/apiRequest";
 import AuthContext from "../context/AuthContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-
 const SignIn = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const { setToken, setUserRole } = useContext(AuthContext);
@@ -21,21 +20,20 @@ const SignIn = () => {
 
   const userAuthServer = async () => {
     try {
-      const res = await apiRequest.post('/auth/login', {
+      const res = await apiRequest.post("/auth/login", {
         email,
-        password
-      })
+        password,
+      });
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
       setToken(res.data.token);
       setUserRole(res.data.role);
       navigate("/");
-
     } catch (error) {
       toast.error("Login failed. Please check your credentials.");
     }
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,21 +41,22 @@ const SignIn = () => {
     let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 
-    if(!email.length){
-      return toast.error('Enter Email');
+    if (!email.length) {
+      return toast.error("Enter Email");
     }
 
-    if(!emailRegex.test(email)){
-      return toast.error("Invalid Email")
+    if (!emailRegex.test(email)) {
+      return toast.error("Invalid Email");
     }
 
-    if(!passwordRegex.test(password)){
-      return toast.error("Password should be 6 to 20 characters long with a numeric, 1 lowercase and 1 uppercase letters")
+    if (!passwordRegex.test(password)) {
+      return toast.error(
+        "Password should be 6 to 20 characters long with a numeric, 1 lowercase and 1 uppercase letters"
+      );
     }
 
     userAuthServer();
-
-  }
+  };
 
   return (
     <>
@@ -89,7 +88,8 @@ const SignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div
-                className="absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer"
+                className="absolute right-4 top-0 h-full flex items-center cursor-pointer"
+                style={{ transform: "translateY(-2px)" }}
                 onClick={togglePassword}
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
