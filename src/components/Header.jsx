@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Button } from "./ui/button";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import AuthContext from "@/context/AuthContext";
 import ProfileDropdown from "./ProfileDropdown";
 import { FaUserCircle } from "react-icons/fa";
@@ -8,13 +8,24 @@ import { FaUserCircle } from "react-icons/fa";
 const Header = () => {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const { token } = useContext(AuthContext);
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
 
   return (
-    <section className="flex justify-between items-center shadow-sm p-4 relative">
+    <section
+      className={`flex justify-between items-center shadow-sm p-4 relative ${
+        isHomePage ? "bg-custom-teal-blue" : "bg-white"
+      }`}
+    >
       <div className="flex items-center gap-2 ml-5">
         <img src="./logo.svg" width={40} height={40} alt="Logo" />
       </div>
-      <ul className="hidden md:flex gap-16 ml-25">
+      <ul
+        className={`hidden md:flex gap-16 ml-25 ${
+          isHomePage ? "text-white" : "text-black"
+        }`}
+      >
         <NavLink to={"/"}>
           <li className="font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary">
             Home
@@ -25,7 +36,7 @@ const Header = () => {
             Property
           </li>
         </NavLink>
-        <NavLink>
+        <NavLink to={"/contact"}>
           <li className="font-medium hover:scale-105 transition-all cursor-pointer hover:text-primary">
             Contact
           </li>
