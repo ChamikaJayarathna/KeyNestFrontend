@@ -36,7 +36,7 @@ const Dashboard = () => {
           <StatCard
             name="Total Property"
             icon={FaBuilding}
-            color="#8B5CF6"
+            color="#FCB454"
             value={propertyCount}
           />
         </motion.div>
