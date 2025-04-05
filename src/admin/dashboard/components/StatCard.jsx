@@ -12,7 +12,7 @@ const StatCard = ({ name, icon: Icon, color, value }) => {
           <Icon size={20} className="mr-2" style={{ color }} />
           {name}
         </span>
-        <p className="mt-1 text-3xl font-semibold text-gray-100">{value}</p>
+        <p className="mt-3 text-3xl font-semibold text-gray-100">{value}</p>
       </div>
     </motion.div>
   );
