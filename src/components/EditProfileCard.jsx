@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const EditProfileCard = () => {
-  return (
-    <div>EditProfileCard</div>
-  );
-}
+const EditProfileCard = ({ profileDetail }) => {
+  return <div>EditProfileCard</div>;
+};
 
 export default EditProfileCard;
