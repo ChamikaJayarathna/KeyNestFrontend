@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const ProfileCard = () => {
   const [profileDetail, setProfileDetail] = useState();
+  const [isEditing, setIsEditing] = useState(false);
   const { token, removeFromSession } = useContext(AuthContext);
   const navigate = useNavigate();
 
