@@ -73,7 +73,11 @@ const Header = () => {
               onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
               className="flex items-center justify-center"
             >
-              <FaUserCircle className="w-9 h-9 text-gray-800" />
+              <FaUserCircle
+                className={`w-9 h-9 ${
+                  isHomePage ? "text-white" : "text-gray-800"
+                }`}
+              />
             </button>
             {isProfileMenuOpen && (
               <div className="absolute right-0 mt-1 w-48 bg-white text-black shadow-lg rounded-lg z-50">
