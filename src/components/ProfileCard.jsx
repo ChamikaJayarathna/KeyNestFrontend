@@ -53,7 +53,11 @@ const ProfileCard = () => {
             >
               Edit Profile
             </Button>
-            <Button className="flex-1 max-w-[180px]" onClick={handleLogout}>
+            <Button
+              className="flex-1 max-w-[180px]"
+              onClick={handleLogout}
+              variant="destructive"
+            >
               Logout
             </Button>
           </div>
