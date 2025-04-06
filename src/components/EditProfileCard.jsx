@@ -19,7 +19,7 @@ const EditProfileCard = ({ profileDetail }) => {
           className="w-30 h-30 mx-auto mb-4 object-cover"
         />
 
-        <div className="">
+        <div className="mt-10">
           <label className="text-sm font-medium text-gray-700 text-left w-full mb-1">
             Username
           </label>
@@ -38,12 +38,12 @@ const EditProfileCard = ({ profileDetail }) => {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
-              className="mb-2 w-full rounded-md border border-custom-teal-blue p-3 outline-none"
+              className="mb-2 w-full rounded-md border border-custom-teal-blue p-3 pr-10 outline-none"
               onChange={(e) => setPassword(e.target.value)}
             />
             <div
-              className="absolute right-4 top-0 h-full flex items-center cursor-pointer"
-              style={{ transform: "translateY(-2px)" }}
+              className="absolute right-4 top-0 bottom-0 my-auto flex items-center cursor-pointer"
+              style={{ transform: "translateY(8px)" }}
               onClick={togglePassword}
             >
               {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -54,7 +54,12 @@ const EditProfileCard = ({ profileDetail }) => {
           <Button className="flex-1 max-w-[180px] bg-green-600 hover:bg-green-700">
             Update Profile
           </Button>
-          <Button className="flex-1 max-w-[180px]" onClick={() => setIsEditing(false)}>Back to Profile</Button>
+          <Button
+            className="flex-1 max-w-[180px]"
+            onClick={() => setIsEditing(false)}
+          >
+            Back to Profile
+          </Button>
         </div>
       </form>
     </div>
