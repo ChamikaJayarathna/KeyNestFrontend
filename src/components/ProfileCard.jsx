@@ -33,9 +33,9 @@ const ProfileCard = () => {
   }, []);
 
   return (
-    <div className="w-[500px] h-[450px] mx-auto bg-amber-300 p-8 rounded-lg shadow-lg mt-10 ">
+    <div>
       {!isEditing ? (
-        <>
+        <div className="w-[500px] h-[450px] mx-auto bg-amber-300 p-8 rounded-lg shadow-lg mt-10 ">
           <img
             src={profileDetail?.profile_img}
             className="w-30 h-30 mx-auto mb-4 object-cover"
@@ -57,7 +57,7 @@ const ProfileCard = () => {
               Logout
             </Button>
           </div>
-        </>
+        </div>
       ) : (
         <EditProfileCard
           profileDetail={profileDetail}
