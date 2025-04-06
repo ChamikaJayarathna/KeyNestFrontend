@@ -12,7 +12,7 @@ const EditProfileCard = ({ profileDetail }) => {
   };
 
   return (
-    <div className="w-[500px] h-[450px] mx-auto bg-amber-300 p-8 rounded-lg shadow-lg mt-10 ">
+    <div className="w-[500px] h-[550px] mx-auto bg-amber-300 p-8 rounded-lg shadow-lg mt-10 ">
       <form>
         <img
           src={profileDetail?.profile_img}
@@ -26,15 +26,15 @@ const EditProfileCard = ({ profileDetail }) => {
           <input
             type="text"
             placeholder="Name"
-             value={username}
+            value={username}
             className="mb-5 w-full rounded-md border border-custom-teal-blue p-3 outline-none"
             onChange={(e) => setUsername(e.target.value)}
           />
 
           <div className="relative w-full">
-          <label className="text-sm font-medium text-gray-700 text-left w-full mb-1">
-            Password
-          </label>
+            <label className="text-sm font-medium text-gray-700 text-left w-full mb-1">
+              Password
+            </label>
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password"
@@ -50,12 +50,12 @@ const EditProfileCard = ({ profileDetail }) => {
             </div>
           </div>
         </div>
-        <div className="flex gap-4">
-              <Button className="bg-green-600 hover:bg-green-700 w-full">Update Profile</Button>
-              <Button onClick={() => setIsEditing(false)}>
-                Back to Profile
-              </Button>
-            </div>
+        <div className="flex justify-center gap-4 mt-20">
+          <Button className="flex-1 max-w-[180px] bg-green-600 hover:bg-green-700">
+            Update Profile
+          </Button>
+          <Button className="flex-1 max-w-[180px]" onClick={() => setIsEditing(false)}>Back to Profile</Button>
+        </div>
       </form>
     </div>
   );
