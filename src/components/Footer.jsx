@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoPinterest } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -40,9 +41,11 @@ const Footer = () => {
               </p>
             </div>
             <div className="mt-4 md:mt-0">
-              <button className="bg-white text-custom-teal-blue px-6 py-3 rounded-md font-semibold text-lg">
-                Contact us
-              </button>
+              <Link to={'/contact-us'}>
+                <button className="bg-white text-custom-teal-blue px-6 py-3 rounded-md font-semibold text-lg">
+                  Contact us
+                </button>
+              </Link>
             </div>
           </div>
         </section>
