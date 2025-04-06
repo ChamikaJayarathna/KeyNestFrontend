@@ -5,15 +5,18 @@ import { FaBuilding } from "react-icons/fa";
 import { motion } from "framer-motion";
 import StatCard from "./components/StatCard";
 import AuthContext from "@/context/AuthContext";
+import PropertyTypeChart from "./components/PropertyTypeChart";
 
 const Dashboard = () => {
   const [propertyCount, setPropertyCount] = useState();
   const [userPropertyCount, setUserPropertyCount] = useState();
+  const [propertyType, setPropertyType] = useState();
   const { token } = useContext(AuthContext);
 
   useEffect(() => {
     GetTotalPropertyCount();
     GetUserTotalPropertyCount();
+    GetPropertyType();
   }, []);
 
   const GetTotalPropertyCount = async () => {
@@ -36,6 +39,17 @@ const Dashboard = () => {
         }
       );
       setUserPropertyCount(response.data.count);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const GetPropertyType = async () => {
+    try {
+      const response = await apiRequest.get(
+        "/property/get-property-type-count"
+      );
+      setPropertyType(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -65,6 +79,10 @@ const Dashboard = () => {
             value={userPropertyCount}
           />
         </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <PropertyTypeChart propertyType={propertyType} />
+        </div>
       </div>
     </div>
   );
