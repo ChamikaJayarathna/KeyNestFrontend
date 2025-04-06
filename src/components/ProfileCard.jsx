@@ -35,7 +35,7 @@ const ProfileCard = () => {
   return (
     <div>
       {!isEditing ? (
-        <div className="w-[500px] h-[450px] mx-auto bg-amber-300 p-8 rounded-lg shadow-lg mt-10 ">
+        <div className="w-[500px] h-[450px] mx-auto p-10 border rounded-xl mt-10 shadow-md">
           <img
             src={profileDetail?.profile_img}
             className="w-30 h-30 mx-auto mb-4 object-cover"

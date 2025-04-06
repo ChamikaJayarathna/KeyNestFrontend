@@ -41,7 +41,7 @@ const EditProfileCard = ({ profileDetail, setIsEditing }) => {
   return (
     <>
       <Toaster />
-      <div className="w-[500px] h-[550px] mx-auto bg-amber-300 p-8 rounded-lg shadow-lg mt-10 ">
+      <div className="w-[500px] h-[550px] mx-auto p-10 border rounded-xl mt-10 shadow-md">
         <form onSubmit={handleUpdateProfile}>
           <img
             src={profileDetail?.profile_img}
