@@ -1,19 +1,42 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Button } from "./ui/button";
+import { jwtDecode } from "jwt-decode";
+import AuthContext from "@/context/AuthContext";
+import apiRequest from "@/lib/apiRequest";
 
 const EditProfileCard = ({ profileDetail }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState(profileDetail?.username);
   const [password, setPassword] = useState("");
 
+  const { token } = useContext(AuthContext);
+
   const togglePassword = () => {
     setShowPassword((prevState) => !prevState);
   };
 
+  const handleUpdateProfile = async () => {
+    try {
+      const decodedToken = jwtDecode(token);
+      const userId = decodedToken._id;
+      const updatedData = { username: username };
+
+      if (password) {
+        updatedData.password = password;
+      }
+
+      await apiRequest.put(`/auth/edit-user/${userId}`, updatedData, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="w-[500px] h-[550px] mx-auto bg-amber-300 p-8 rounded-lg shadow-lg mt-10 ">
-      <form>
+      <form onSubmit={handleUpdateProfile}>
         <img
           src={profileDetail?.profile_img}
           className="w-30 h-30 mx-auto mb-4 object-cover"
