@@ -13,6 +13,7 @@ import Dashboard from "./admin/dashboard/Dashboard";
 import AddProperty from "./admin/add-property/AddProperty";
 import ViewProperty from "./admin/view-property/ViewProperty";
 import Profile from "./pages/Profile";
+import ContactUs from "./pages/ContactUs";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const App = () => {
     {
       path: "/profile/:id",
       element: <Profile />,
+    },
+    {
+      path: "/contact-us",
+      element: <ContactUs />,
     },
     {
       path: "/admin",

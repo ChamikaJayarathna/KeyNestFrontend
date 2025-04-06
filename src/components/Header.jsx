@@ -44,7 +44,7 @@ const Header = () => {
             Property
           </li>
         </NavLink>
-        <NavLink to={"/contact"}>
+        <NavLink to={"/contact-us"}>
           <li
             className={`font-medium hover:scale-105 transition-all cursor-pointer ${
               isHomePage ? "hover:text-white" : "hover:text-primary"
