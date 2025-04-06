@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import apiRequest from "@/lib/apiRequest";
 import React, { useEffect, useState } from "react";
 
@@ -28,6 +29,8 @@ const OwnersDetail = ({ listingId }) => {
         className="w-[70px] h-[70px] rounded-full"
       />
       <h2 className="mt-2 font-bold text-xl">{ownerProfileDetail?.username}</h2>
+
+      <Button className="w-full mt-6">Message Owner</Button>
     </div>
   );
 };
