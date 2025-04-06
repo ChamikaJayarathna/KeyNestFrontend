@@ -1,7 +1,7 @@
 import apiRequest from "@/lib/apiRequest";
 import React, { useContext, useEffect, useState } from "react";
 import Header from "../admin-components/Header";
-import { FaBuilding } from "react-icons/fa";
+import { FaBuilding, FaUser } from "react-icons/fa";
 import { motion } from "framer-motion";
 import StatCard from "./components/StatCard";
 import AuthContext from "@/context/AuthContext";
@@ -11,12 +11,14 @@ const Dashboard = () => {
   const [propertyCount, setPropertyCount] = useState();
   const [userPropertyCount, setUserPropertyCount] = useState();
   const [propertyType, setPropertyType] = useState();
+  const [userCount, setUserCount] = useState();
   const { token } = useContext(AuthContext);
 
   useEffect(() => {
     GetTotalPropertyCount();
     GetUserTotalPropertyCount();
     GetPropertyType();
+    GetUserCount();
   }, []);
 
   const GetTotalPropertyCount = async () => {
@@ -55,6 +57,15 @@ const Dashboard = () => {
     }
   };
 
+  const GetUserCount = async () => {
+    try {
+      const response = await apiRequest.get("/auth/get-user-count");
+      setUserCount(response.data.count);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <Header title="Dashboard" />
@@ -65,6 +76,13 @@ const Dashboard = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
+          <StatCard
+            name="Total User Count"
+            icon={FaUser}
+            color="#10B981"
+            value={userCount}
+          />
+
           <StatCard
             name="Total Property Count"
             icon={FaBuilding}
