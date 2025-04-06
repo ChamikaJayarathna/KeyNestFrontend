@@ -19,7 +19,7 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center gap-2 ml-5">
-        <img src="./logo.svg" width={40} height={40} alt="Logo" />
+        <img src="/logo.svg" width={40} height={40} alt="Logo" />
       </div>
       <ul
         className={`hidden md:flex gap-16 ml-25 ${
