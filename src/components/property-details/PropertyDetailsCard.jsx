@@ -8,6 +8,7 @@ import apiRequest from "@/lib/apiRequest";
 import Map from "./components/Map";
 import Header from "../Header";
 import Pricing from "./components/Pricing";
+import OwnersDetail from "./components/OwnersDetail";
 
 const PropertyDetailsCard = () => {
   const [propertyDetails, setPropertyDetails] = useState();
@@ -49,6 +50,7 @@ const PropertyDetailsCard = () => {
             ) : (
               <p>Loading Map...</p>
             )}
+            <OwnersDetail listingId={id} />
           </div>
         </div>
       </div>
