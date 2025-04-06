@@ -6,7 +6,7 @@ import AuthContext from "@/context/AuthContext";
 import apiRequest from "@/lib/apiRequest";
 import toast, { Toaster } from "react-hot-toast";
 
-const EditProfileCard = ({ profileDetail }) => {
+const EditProfileCard = ({ profileDetail, setIsEditing }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState(profileDetail?.username);
   const [password, setPassword] = useState("");
