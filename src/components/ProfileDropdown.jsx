@@ -1,12 +1,30 @@
 import AuthContext from "@/context/AuthContext";
-import React, { useContext } from "react";
+import apiRequest from "@/lib/apiRequest";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 const ProfileDropdown = () => {
-  const { removeFromSession } = useContext(AuthContext);
+  const [profileDetail, setProfileDetail] = useState();
+  const { token, removeFromSession } = useContext(AuthContext);
 
   const handleLogout = () => {
     removeFromSession();
+  };
+
+  useEffect(() => {
+    GetProfile();
+  }, []);
+
+  const GetProfile = async () => {
+    try {
+      const decodedToken = jwtDecode(token);
+      const userId = decodedToken._id;
+      const response = await apiRequest.get(`/auth/profile/${userId}`);
+      setProfileDetail(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -17,7 +35,10 @@ const ProfileDropdown = () => {
 
       <hr className="border-t border-gray-300 mx-auto w-[92%]" />
 
-      <Link to="#" className="block px-6 py-5 hover:bg-gray-100">
+      <Link
+        to={`/profile/${profileDetail?._id}`}
+        className="block px-6 py-5 hover:bg-gray-100"
+      >
         Profile
       </Link>
 

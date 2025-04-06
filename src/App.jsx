@@ -12,6 +12,7 @@ import PropertyDetailsCard from "./components/property-details/PropertyDetailsCa
 import Dashboard from "./admin/dashboard/Dashboard";
 import AddProperty from "./admin/add-property/AddProperty";
 import ViewProperty from "./admin/view-property/ViewProperty";
+import Profile from "./pages/Profile";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -42,6 +43,10 @@ const App = () => {
     {
       path: "/search/:query",
       element: <SearchPage />,
+    },
+    {
+      path: "/profile/:id",
+      element: <Profile />,
     },
     {
       path: "/admin",
