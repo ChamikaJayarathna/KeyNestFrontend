@@ -53,7 +53,7 @@ const EditProfileCard = ({ profileDetail }) => {
             </label>
             <input
               type="text"
-              placeholder="Name"
+              placeholder="Username"
               value={username}
               className="mb-5 w-full rounded-md border border-custom-teal-blue p-3 outline-none"
               onChange={(e) => setUsername(e.target.value)}
