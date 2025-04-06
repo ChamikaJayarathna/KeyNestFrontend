@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import ProfileCard from "@/components/ProfileCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React from "react";
 
@@ -13,7 +14,9 @@ const Profile = () => {
             <TabsTrigger value="chat">Chat</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="profile">Profile</TabsContent>
+          <TabsContent value="profile">
+            <ProfileCard />
+          </TabsContent>
           <TabsContent value="chat">Chat</TabsContent>
         </Tabs>
       </div>
