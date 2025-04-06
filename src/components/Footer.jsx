@@ -42,7 +42,7 @@ const Footer = () => {
             </div>
             <div className="mt-4 md:mt-0">
               <Link to={'/contact-us'}>
-                <button className="bg-white text-custom-teal-blue px-6 py-3 rounded-md font-semibold text-lg">
+                <button className="bg-white text-custom-teal-blue px-6 py-3 rounded-md font-semibold text-lg cursor-pointer">
                   Contact us
                 </button>
               </Link>
