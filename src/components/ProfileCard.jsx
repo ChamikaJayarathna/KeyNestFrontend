@@ -3,10 +3,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import apiRequest from "@/lib/apiRequest";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 const ProfileCard = () => {
   const [profileDetail, setProfileDetail] = useState();
   const { token, removeFromSession } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const GetProfile = async () => {
     try {
@@ -17,6 +19,11 @@ const ProfileCard = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleLogout = () => {
+    removeFromSession();
+    navigate("/");
   };
 
   useEffect(() => {
@@ -37,7 +44,9 @@ const ProfileCard = () => {
       </div>
       <div className="flex justify-center gap-4 mt-20">
         <Button className="flex-1 max-w-[180px]">Edit Profile</Button>
-        <Button className="flex-1 max-w-[180px]">Logout</Button>
+        <Button className="flex-1 max-w-[180px]" onClick={handleLogout}>
+          Logout
+        </Button>
       </div>
     </div>
   );
