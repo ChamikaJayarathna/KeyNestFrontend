@@ -46,7 +46,7 @@ const ProfileCard = () => {
             </h1>
             <p className="text-gray-600 text-base">{profileDetail?.email}</p>
           </div>
-          <div className="flex justify-center gap-4 mt-20">
+          <div className="flex justify-center gap-8 mt-20">
             <Button
               className="flex-1 max-w-[180px]"
               onClick={() => setIsEditing(true)}
