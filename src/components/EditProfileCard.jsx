@@ -17,7 +17,8 @@ const EditProfileCard = ({ profileDetail }) => {
     setShowPassword((prevState) => !prevState);
   };
 
-  const handleUpdateProfile = async () => {
+  const handleUpdateProfile = async (e) => {
+    e.preventDefault();
     try {
       const decodedToken = jwtDecode(token);
       const userId = decodedToken._id;
