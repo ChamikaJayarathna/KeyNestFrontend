@@ -19,7 +19,7 @@ const Profile = () => {
             <ProfileCard />
           </TabsContent>
           <TabsContent value="chat">
-            <Inbox/>
+            <Inbox />
           </TabsContent>
         </Tabs>
       </div>
