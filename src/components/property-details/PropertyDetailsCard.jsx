@@ -9,6 +9,7 @@ import Map from "./components/Map";
 import Header from "../Header";
 import Pricing from "./components/Pricing";
 import OwnersDetail from "./components/OwnersDetail";
+import MostSearchedProperty from "../MostSearchedProperty";
 
 const PropertyDetailsCard = () => {
   const [propertyDetails, setPropertyDetails] = useState();
@@ -16,7 +17,7 @@ const PropertyDetailsCard = () => {
 
   useEffect(() => {
     GetPropertyDetails();
-  }, []);
+  }, [id]);
 
   const GetPropertyDetails = async () => {
     try {
@@ -53,6 +54,7 @@ const PropertyDetailsCard = () => {
             <OwnersDetail listingId={id} />
           </div>
         </div>
+        <MostSearchedProperty/>
       </div>
     </div>
   );
