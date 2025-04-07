@@ -34,7 +34,7 @@ const MostSearchedProperty = () => {
         <CarouselContent>
           {propertyDetails.map((property, index) => (
             <CarouselItem className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                <PropertyCard property={property} />
+              <PropertyCard property={property} />
             </CarouselItem>
           ))}
         </CarouselContent>
