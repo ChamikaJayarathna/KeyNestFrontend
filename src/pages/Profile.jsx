@@ -1,3 +1,4 @@
+import Inbox from "@/components/chat/Inbox";
 import Header from "@/components/Header";
 import ProfileCard from "@/components/ProfileCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -17,7 +18,9 @@ const Profile = () => {
           <TabsContent value="profile">
             <ProfileCard />
           </TabsContent>
-          <TabsContent value="chat">Chat</TabsContent>
+          <TabsContent value="chat">
+            <Inbox/>
+          </TabsContent>
         </Tabs>
       </div>
     </div>
