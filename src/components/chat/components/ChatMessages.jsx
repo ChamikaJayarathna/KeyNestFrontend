@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from "react";
 
 const ChatMessages = () => {
-  return (
-    <div>ChatMessages</div>
-  );
-}
+  const [message, setMessage] = useState("");
+
+  return <div>ChatMessages</div>;
+};
 
 export default ChatMessages;
