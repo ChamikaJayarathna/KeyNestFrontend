@@ -1,35 +1,83 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import PropertyPage from "./pages/PropertyPage";
+import { AuthProvider } from "./context/AuthContext";
+import PredictPropertyPage from "./pages/PredictPropertyPage";
+import AdminLayout from "./admin/AdminLayout";
+import SearchPage from "./pages/SearchPage";
+import PropertyDetailsCard from "./components/property-details/PropertyDetailsCard";
+import Dashboard from "./admin/dashboard/Dashboard";
+import AddProperty from "./admin/add-property/AddProperty";
+import ViewProperty from "./admin/view-property/ViewProperty";
+import Profile from "./pages/Profile";
+import ContactUs from "./pages/ContactUs";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/sign-in",
+      element: <SignIn />,
+    },
+    {
+      path: "/sign-up",
+      element: <SignUp />,
+    },
+    {
+      path: "/property",
+      element: <PropertyPage />,
+    },
+    {
+      path: "/property-details/:id",
+      element: <PropertyDetailsCard />,
+    },
+    {
+      path: "/predict-property",
+      element: <PredictPropertyPage />,
+    },
+    {
+      path: "/search/:query",
+      element: <SearchPage />,
+    },
+    {
+      path: "/profile/:id",
+      element: <Profile />,
+    },
+    {
+      path: "/contact-us",
+      element: <ContactUs />,
+    },
+    {
+      path: "/admin",
+      element: <AdminLayout />,
+      children: [
+        {
+          path: "dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "view-property",
+          element: <ViewProperty />,
+        },
+        {
+          path: "add-property",
+          element: <AddProperty />,
+        },
+      ],
+    },
+  ]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
+};
 
-export default App
+export default App;

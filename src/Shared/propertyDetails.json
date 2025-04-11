@@ -1,0 +1,112 @@
+{
+  "propertyDetails": [
+    {
+      "label": "Property Title",
+      "name": "title",
+      "fieldType": "text",
+      "required": true,
+      "icon": "FaClipboardList"
+    },
+    {
+      "label": "Address",
+      "name": "address",
+      "fieldType": "text",
+      "required": true,
+      "icon": "FaLocationDot"
+    },
+    {
+      "label": "Selling Price",
+      "name": "price",
+      "fieldType": "text",
+      "required": true,
+      "icon": "FaMoneyBill"
+    },
+    {
+      "label": "City",
+      "name": "city",
+      "fieldType": "text",
+      "required": true,
+      "icon": "IoHome"
+    },
+    {
+      "label": "Bedroom",
+      "name": "bedroom",
+      "fieldType": "number",
+      "required": true,
+      "icon": "FaBed"
+    },
+    {
+      "label": "Bathroom",
+      "name": "bathroom",
+      "fieldType": "number",
+      "required": true,
+      "icon": "FaBath"
+    },
+    {
+      "label": "Car Spaces",
+      "name": "carSpaces",
+      "fieldType": "number",
+      "icon": "FaCar"
+    },
+    {
+      "label": "Property Type",
+      "name": "property",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Apartment", "House", "Land", "Townhouse", "Villa", "Retirement Living", "Acreage", "Rural"],
+      "icon": "BsBuildingsFill"
+    },
+    {
+      "label": "Category",
+      "name": "type",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Rent", "Buy", "Sell"],
+      "icon": "IoGrid"
+    },
+    {
+      "label": "Utilities",
+      "name": "utilities",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Owner", "Tenant", "Shared"],
+      "icon": "FaTools"
+    },
+    {
+      "label": "Condition",
+      "name": "condition",
+      "fieldType": "dropdown",
+      "options": ["New", "Established"],
+      "icon": "FaCheckCircle"
+    },
+    {
+      "label": "Animal",
+      "name": "pet",
+      "fieldType": "dropdown",
+      "required": true,
+      "options": ["Allowed", "Not allowed"],
+      "icon": "GiSittingDog"
+    },
+    {
+      "label": "Latitude",
+      "name": "latitude",
+      "fieldType": "number",
+      "required": true,
+      "icon": "MdLocationSearching"
+    },
+    {
+      "label": "Longitude",
+      "name": "longitude",
+      "fieldType": "number",
+      "required": true,
+      "icon": "FaLocationCrosshairs"
+    },
+    {
+      "label": "Property Description",
+      "name": "description",
+      "fieldType": "textarea",
+      "required": true,
+      "icon": "FaFileAlt"
+    }
+  ]
+}

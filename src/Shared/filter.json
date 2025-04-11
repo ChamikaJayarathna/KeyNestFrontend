@@ -1,0 +1,236 @@
+{
+  "propertyTypes": [
+    {
+      "label": "House",
+      "name": "house",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Townhouse",
+      "name": "townhouse",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Apartment",
+      "name": "apartment",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Villa",
+      "name": "villa",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Retirement Living",
+      "name": "retirementLiving",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Land",
+      "name": "land",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Acreage",
+      "name": "acreage",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Rural",
+      "name": "rural",
+      "fieldType": "checkbox"
+    }
+  ],
+
+  "outdoorFeatures": [
+    {
+      "label": "Swimming pool",
+      "name": "swimmingPool",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Balcony",
+      "name": "balcony",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Garage",
+      "name": "garage",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Shed",
+      "name": "shed",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Fully fenced",
+      "name": "fullyFenced",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Undercover parking",
+      "name": "undercoverParking",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Outdoor spa",
+      "name": "outdoorSpa",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Tennis court",
+      "name": "tennisCourt",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Outdoor area",
+      "name": "outdoorArea",
+      "fieldType": "checkbox"
+    }
+  ],
+
+  "indoorFeatures": [
+    {
+      "label": "Dishwasher",
+      "name": "dishwasher",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Built in robes",
+      "name": "builtInRobes",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Broadband",
+      "name": "broadband",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Floorboards",
+      "name": "floorboards",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Study",
+      "name": "study",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Workshop",
+      "name": "workshop",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Alarm system",
+      "name": "alarmSystem",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Gym",
+      "name": "gym",
+      "fieldType": "checkbox"
+    }
+  ],
+
+  "climateFeatures": [
+    {
+      "label": "Heating",
+      "name": "heating",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Solar panels",
+      "name": "solarPanels",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Fireplace",
+      "name": "fireplace",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Water tank",
+      "name": "waterTank",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Air conditioning",
+      "name": "airConditioning",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Solar hot water",
+      "name": "solarHotWater",
+      "fieldType": "checkbox"
+    }
+  ],
+  "accessibilityFeatures": [
+    {
+      "label": "Single storey",
+      "name": "singleStorey",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Step free entry",
+      "name": "stepFreeEntry",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Wide doorways",
+      "name": "wideDoorways",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Roll in shower",
+      "name": "rollInShower",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Elevator",
+      "name": "elevator",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Bathroom grab rails",
+      "name": "bathroomGrabRails",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Accessible parking",
+      "name": "accessibleParking",
+      "fieldType": "checkbox"
+    }
+  ],
+
+  "condition": [
+    {
+      "label": "New",
+      "name": "new",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Established",
+      "name": "established",
+      "fieldType": "checkbox"
+    }
+  ],
+  
+  "transactionType": [
+    {
+      "label": "Rent",
+      "name": "rent",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Buy",
+      "name": "buy",
+      "fieldType": "checkbox"
+    },
+    {
+      "label": "Sell",
+      "name": "sell",
+      "fieldType": "checkbox"
+    }
+  ]
+}
